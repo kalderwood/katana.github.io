@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="view-choice.js"></script>
+  <title>Contact — Calderwood Creations</title>
+  <meta name="description" content="Katana Calderwood: experimental artist, designer and builder working in future-primitive, regenerative design.">
+  <meta name="robots" content="index, follow, noai, noimageai">
+  <meta name="author" content="Katana Calderwood">
+  <meta name="copyright" content="© 2026 Calderwood Creations LLC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@300;400&family=Chewy&family=Gochi+Hand&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="fit">
+
+  <!-- hidden SVG filter: messy ink edges for the Algo(g)rave title -->
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+    <filter id="ink" x="-4%" y="-14%" width="108%" height="128%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="8" result="wob"/>
+      <feDisplacementMap in="SourceGraphic" in2="wob" scale="5" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="fine"/>
+      <feDisplacementMap in="d1" in2="fine" scale="2.2" xChannelSelector="G" yChannelSelector="R" result="d2"/>
+      <!-- dry-brush streaks: stretched noise, a few long scratches and gaps -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.42" numOctaves="2" seed="17" result="streak"/>
+      <feColorMatrix in="streak" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 9 -2.8" result="m1"/>
+      <!-- irregular blotches of bare paper, uneven in size -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.075 0.11" numOctaves="4" seed="52" result="blot"/>
+      <feColorMatrix in="blot" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 14 -4.6" result="m2"/>
+      <!-- tiny pin-holes -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.38" numOctaves="2" seed="29" result="pin"/>
+      <feColorMatrix in="pin" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 16 -4.9" result="m3"/>
+      <feComposite in="d2" in2="m1" operator="in" result="a"/>
+      <feComposite in="a" in2="m2" operator="in" result="b"/>
+      <feComposite in="b" in2="m3" operator="in"/>
+    </filter>
+  </defs></svg>
+
+
+  <!-- ===== HEADER (same on every page): edit name and menu here ===== -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Deadbeat Designs"><picture><source srcset="images/brand-linocut.png"><img class="brand-lino brand-imprint" src="images/brand-imprint.png" alt="" width="1500" height="248"></picture></a>
+    <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Menu"><label for="navtoggle" class="nav-burger" aria-hidden="true"><i></i><i></i><i></i></label><label for="navtoggle" class="nav-backdrop" aria-hidden="true"></label>
+    <nav aria-label="Main">
+      <a href="architecture.html" data-text="Architecture">Architecture</a>
+      <a href="art-of-the-taboo.html" data-text="Exhibitions">Exhibitions</a>
+      <a href="misc.html" data-text="Music">Music</a>
+      <a href="photography.html" data-text="Photography">Photography</a>
+      <a href="texts.html" data-text="Texts">Texts</a>
+      <a href="about.html" data-text="About">About</a>
+      <a href="cv.html" data-text="CV">CV</a>
+      <a href="contact.html" aria-current="page" data-text="Contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== ABOUT: edit the text here ===== -->
+  <main class="about project contact-page">
+    <figure class="about-image">
+      <picture><source media="(min-width: 44.01rem)" srcset="images/about-friends-desktop.jpg"><img class="about-photo" src="images/about-friends.jpg" alt="Three people smiling in the snow outside a wooden ski lodge; the person on the left is traced with a thin hand-drawn salmon-pink line"></picture>
+      <figcaption>
+                <a class="email" href="mailto:katana.calderwood@proton.me">katana.calderwood@proton.me</a>
+        <span class="socials">
+        <span class="social" role="img" aria-label="Bluesky">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>
+        </span>
+        <a class="social" href="#discord" aria-label="Discord: @anarchi.arts" title="@anarchi.arts">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+        </a>
+        <a class="social" href="https://substack.com/@kalderwood" target="_blank" rel="noopener" aria-label="Substack">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+        </a>
+        <a class="social" href="https://www.linkedin.com/in/kalderwood/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        </span>
+      </figcaption>
+    </figure>
+
+    <div class="about-text">
+      <h1 class="contact-title">Want to collaborate?</h1>
+      <!-- Sends straight to katana.calderwood@proton.me through FormSubmit (free service, no JavaScript needed).
+           The very first message triggers a one-time activation email to that address: click the link in it once. -->
+      <form class="contact-form" action="https://formsubmit.co/katana.calderwood@proton.me" method="POST">
+        <input type="hidden" name="_subject" value="New message from the Calderwood Creations website">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label><span>Name</span><input type="text" name="name" required autocomplete="name"></label>
+        <label><span>Email</span><input type="email" name="email" required autocomplete="off"></label>
+        <label><span>Project</span><input type="text" name="project_idea" autocomplete="off"></label>
+        <label><span>Timeline</span><input type="text" name="timeline" autocomplete="off"></label>
+        <label><span>Budget</span><input type="text" name="budget" autocomplete="off"></label>
+        <label class="msg"><span>Message</span><textarea name="message" rows="6" required></textarea></label>
+        <div class="actions"><button type="submit">Send</button></div>
+      </form>
+    </div>
+  </main>
+
+
+  <!-- Discord handle pop-up (no website to link to): opens when the Discord icon is clicked, closes with the x -->
+  <div class="handle-pop" id="discord" role="dialog" aria-label="Discord handle">
+    <a class="hp-bg" href="#_" aria-label="Close"></a>
+    <div class="hp-card">
+      <a class="hp-close" href="#_" aria-label="Close">&times;</a>
+      <p class="hp-label">Discord</p>
+      <p class="hp-handle">anarchi.arts</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Calderwood Creations LLC</p>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>

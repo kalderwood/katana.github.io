@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="snap">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="view-choice.js"></script>
+  <title>Architecture — Katana Calderwood</title>
+  <meta name="description" content="Katana Calderwood: experimental artist, designer and builder working in future-primitive, regenerative design.">
+  <meta name="robots" content="index, follow, noai, noimageai">
+  <meta name="author" content="Katana Calderwood">
+  <meta name="copyright" content="© 2026 Calderwood Creations LLC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@300;400&family=Chewy&family=Gochi+Hand&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- hidden SVG filter: messy ink edges for the Algo(g)rave title -->
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+    <filter id="ink" x="-4%" y="-14%" width="108%" height="128%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="8" result="wob"/>
+      <feDisplacementMap in="SourceGraphic" in2="wob" scale="5" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="fine"/>
+      <feDisplacementMap in="d1" in2="fine" scale="2.2" xChannelSelector="G" yChannelSelector="R" result="d2"/>
+      <!-- dry-brush streaks: stretched noise, a few long scratches and gaps -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.42" numOctaves="2" seed="17" result="streak"/>
+      <feColorMatrix in="streak" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 9 -2.8" result="m1"/>
+      <!-- irregular blotches of bare paper, uneven in size -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.075 0.11" numOctaves="4" seed="52" result="blot"/>
+      <feColorMatrix in="blot" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 14 -4.6" result="m2"/>
+      <!-- tiny pin-holes -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.38" numOctaves="2" seed="29" result="pin"/>
+      <feColorMatrix in="pin" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 16 -4.9" result="m3"/>
+      <feComposite in="d2" in2="m1" operator="in" result="a"/>
+      <feComposite in="a" in2="m2" operator="in" result="b"/>
+      <feComposite in="b" in2="m3" operator="in"/>
+    </filter>
+  </defs></svg>
+
+
+  <!-- ===== HEADER (same on every page): edit name and menu here ===== -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Deadbeat Designs"><picture><source srcset="images/brand-linocut.png"><img class="brand-lino brand-imprint" src="images/brand-imprint.png" alt="" width="1500" height="248"></picture></a>
+    <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Menu"><label for="navtoggle" class="nav-burger" aria-hidden="true"><i></i><i></i><i></i></label><label for="navtoggle" class="nav-backdrop" aria-hidden="true"></label>
+    <nav aria-label="Main">
+      <a href="architecture.html" aria-current="page" data-text="Architecture">Architecture</a>
+      <a href="art-of-the-taboo.html" data-text="Exhibitions">Exhibitions</a>
+      <a href="misc.html" data-text="Music">Music</a>
+      <a href="photography.html" data-text="Photography">Photography</a>
+      <a href="texts.html" data-text="Texts">Texts</a>
+      <a href="about.html" data-text="About">About</a>
+      <a href="cv.html" data-text="CV">CV</a>
+      <a href="contact.html" data-text="Contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== ARCHITECTURE: the projects. Edit titles and descriptions; replace each cover image in images/ ===== -->
+  <main class="projects">
+    <div class="apage">
+    <section class="about project" id="macrodosis-stage">
+      <figure class="about-image">
+        <a href="macrodosis-stage.html" aria-label="Open the MACROdose Stage at Coachella, 2024 book"><img src="images/macrodosis-stage-cover.jpg" alt="MACROdose Stage at Coachella, 2024: colorful fabric canopy above an empty stage"></a>
+        <a class="book-btn" href="macrodosis-stage.html">Open booklet</a>
+      </figure>
+      <div class="about-text">
+        <h2 class="exact">MACROdose Stage at Coachella, 2024</h2>
+        <p class="desc">The Woogie is Do LaB&rsquo;s long-running house and techno stage. MACROdose is its colorful, trippy, 360-degree environment, built from nine sprawling fabric &ldquo;mushroom&rdquo; structures. Do LaB debuted the design at Coachella 2024 as their standalone stage, then moved the same structure to Lightning in a Bottle as the new look for The Woogie.</p>
+        <div class="links2"><a class="grey" href="https://www.dezeen.com/2024/04/23/do-lab-fabric-mushrooms-coachella-stage/" target="_blank" rel="noopener">Dezeen</a><a class="grey" href="https://www.latimes.com/entertainment-arts/music/story/2025-04-13/do-lab-20-anniversary-flemming-brothers-dj-coachella-2025" target="_blank" rel="noopener">LA Times</a><a class="grey" href="https://meyersound.com/news/do-lab-coachella-2026/" target="_blank" rel="noopener">Meyer Sound</a><details class="credits"><summary class="grey">Credits</summary>
+          <div class="credits-box" role="dialog" aria-label="Project credits">
+            <p>Credits to be added.</p>
+          </div>
+        </details></div>
+      </div>
+    </section>
+    <section class="about project" id="auris-interna">
+      <figure class="about-image">
+        <a href="auris-interna.html" aria-label="Open the Auris Interna book"><img src="images/auris-interna-01.jpg" alt="Render of a tall spiral tower of bamboo poles on a cracked white desert floor"></a>
+        <a class="book-btn" href="auris-interna.html">Open booklet</a>
+      </figure>
+      <div class="about-text">
+        <h2 class="exact">Auris Interna, 2023</h2>
+        <p class="desc">Write a short description of Auris Interna here. Edit this text in architecture.html.</p>
+        <div class="links2"><details class="credits"><summary class="grey">Credits</summary>
+          <div class="credits-box" role="dialog" aria-label="Project credits">
+            <p>Credits to be added.</p>
+          </div>
+        </details></div>
+      </div>
+    </section>
+    </div>
+
+    <div class="apage">
+    <section class="about project" id="ceresoma">
+      <figure class="about-image">
+        <a href="ceresoma.html" aria-label="Open the CERESOMA book"><img src="images/ceresoma-cover.jpg" alt="CERESOMA lunar research facility: a pale wireframe outline floating above the facility on a rocky lunar landscape under a starry sky"></a>
+        <a class="book-btn" href="ceresoma.html">Open booklet</a>
+      </figure>
+      <div class="about-text">
+        <h2 class="exact">CERESOMA, 2021</h2>
+        <p class="desc">CERESOMA is a lunar research facility designed as Calderwood&rsquo;s Master&rsquo;s thesis, built around the psychosocial strain of living in isolated and confined environments: boredom, isolation, confinement and deprivation. Dynamic architectural forms, layered space and algal systems stimulate the mind and body to keep them connected. The proposal was submitted to a competition by the Moon Village Association and Yuzhnoye State Design Office, Ukraine&rsquo;s top aerospace engineering company, which selects the best technical concepts for a permanent human presence on the Moon, with expert mentorship for the winners.</p>
+        <div class="links2"><details class="credits"><summary class="grey">Credits</summary>
+          <div class="credits-box" role="dialog" aria-label="Project credits">
+            <p>Credits to be added.</p>
+          </div>
+        </details></div>
+      </div>
+    </section>
+    <section class="about project" id="hydrocache-hub">
+      <figure class="about-image">
+        <a href="hydrocache-hub.html" aria-label="Open the Hydrocache Hub book"><img src="images/hydrocache-hub-cover.jpg" alt="Twisting white and glass tower rising above clouds"></a>
+        <a class="book-btn" href="hydrocache-hub.html">Open booklet</a>
+      </figure>
+      <div class="about-text">
+        <h2 class="exact">Hydrocache Hub, 2020</h2>
+        <p class="desc">Conceived in the collaborative graduate studio with LMN and the School of Architecture at Montana State University, this solo project harvests water vapor from the atmosphere and creates reserves for Montana’s increasing drought problem.</p>
+        <div class="links2"><details class="credits"><summary class="grey">Credits</summary>
+          <div class="credits-box" role="dialog" aria-label="Project credits">
+            <p>Credits to be added.</p>
+          </div>
+        </details></div>
+      </div>
+    </section>
+    </div>
+
+    <div class="apage">
+    <section class="about project" id="woodland-park-elementary-school">
+      <figure class="about-image">
+        <a href="woodland-park-elementary-school.html" aria-label="Open the Woodland Park Elementary School book"><img src="images/woodland-park-elementary-school-cover.jpg" alt="Woodland Park Elementary, Bozeman, MT: exterior winter perspective"></a>
+        <a class="book-btn" href="woodland-park-elementary-school.html">Open booklet</a>
+      </figure>
+      <div class="about-text">
+        <h2 class="exact">Woodland Park Elementary School, 2019</h2>
+        <p class="desc">An AIA COTE project that creates a net-zero elementary school for Bozeman, Montana. Ten sustainability strategies guide the design: a rammed earth structure with aspen bark finishes and fritted triple-E glazing, rain and snow harvested into a below-grade cistern, and two of the ten acres given to community gardens. The gym, dog park and gardens stay open to the public after hours, so the school works as a shared hub for the neighborhood as well as a place to learn.</p>
+        <div class="links2"><details class="credits"><summary class="grey">Credits</summary>
+          <div class="credits-box" role="dialog" aria-label="Project credits">
+            <p>Credits to be added.</p>
+          </div>
+        </details></div>
+      </div>
+    </section>
+    <section class="about project" id="suq-at-zouiat-ahansal">
+      <figure class="about-image">
+        <a href="suq-at-zouiat-ahansal.html" aria-label="Open the Suq at Zouwiat Ahansal, Morocco, 2019 book"><img src="images/suq-at-zouiat-ahansal-cover.jpg" alt="Suq at Zouwiat Ahansal, Morocco, 2019 "></a>
+        <a class="book-btn" href="suq-at-zouiat-ahansal.html">Open booklet</a>
+      </figure>
+      <div class="about-text">
+        <h2 class="exact">Suq at Zouwiat Ahansal, Morocco, 2019</h2>
+        <p class="desc">Write a short description of Suq at Zouwiat Ahansal, Morocco, 2019 here. Edit this text in architecture.html.</p>
+        <div class="links2"><a class="grey" href="https://www.atlasculturalfoundation.org/" target="_blank" rel="noopener">Atlas Cultural Foundation</a><details class="credits"><summary class="grey">Credits</summary>
+          <div class="credits-box" role="dialog" aria-label="Project credits">
+            <p>Credits to be added.</p>
+          </div>
+        </details></div>
+      </div>
+    </section>
+    </div>
+
+    <div class="apage">
+    <section class="about project" id="hyundai-cheonan-global-learning-center">
+      <figure class="about-image">
+        <a href="hyundai-cheonan-global-learning-center.html" aria-label="Open the Hyundai Cheonan Global Learning Center book"><img src="images/hyundai-cheonan-global-learning-center-cover.jpg" alt="The Hyundai Cheonan Global Learning Center at dusk: a silver mesh volume floating above a glowing glass ground floor, with a paved path and lawn in front"></a>
+        <a class="book-btn" href="hyundai-cheonan-global-learning-center.html">Open booklet</a>
+      </figure>
+      <div class="about-text">
+        <h2 class="exact">Hyundai Cheonan Global Learning Center, Cheonan, South Korea, 2018</h2>
+        <p class="desc">The project was spearheaded by firm founder Byoung Cho, who is considered South Korea&rsquo;s most important architect, and partner Jihyun Lee. Calderwood worked alongside them as part of the core design and production team during this era as a Designer for BCHO Architects Associates.</p>
+        <div class="links2"><a class="grey" href="https://architizer.com/firms/bcho-architects-associates/" target="_blank" rel="noopener">Architizer</a><a class="grey" href="https://ifdesign.com/en/winner-ranking/project/hyundai-motor-company-global-learning-center/318035" target="_blank" rel="noopener">IF Design Award</a><details class="credits"><summary class="grey">Credits</summary>
+          <div class="credits-box" role="dialog" aria-label="Project credits">
+            <p><b>PROJECT:</b> Hyundai Cheonan Global Learning Center</p>
+            <p><b>LOCATION:</b> Cheonan, South Korea</p>
+            <p><b>ARCHITECT:</b> BCHO Architects Associates (BCHO Partners)</p>
+            <p><b>PRINCIPAL-IN-CHARGE:</b> ByoungSoo Cho</p>
+            <p><b>PARTNER-IN-CHARGE:</b> Jihyun Lee</p>
+            <p><b>PROJECT TEAM:</b> Direct Production, Design, &amp; Drafting Credits</p>
+            <ul><li>Katana Calderwood (Kate Calderwood)</li><li>Nicholas S. Groh</li><li>Youngjin Kang</li><li>Taehyun Kim</li><li>Minook Kim</li></ul>
+          </div>
+        </details></div>
+      </div>
+    </section>
+    <section class="about project" id="hrdc-tiny-home-village">
+      <figure class="about-image">
+        <a href="hrdc-tiny-home-village.html" aria-label="Open the HRDC Tiny Home Village Prototype, 2017 book"><img src="images/hrdc-tiny-home-village-cover.jpg" alt="HRDC Tiny Home Village Prototype, 2017 "></a>
+        <a class="book-btn" href="hrdc-tiny-home-village.html">Open booklet</a>
+      </figure>
+      <div class="about-text">
+        <h2 class="exact">HRDC Tiny Home Village Prototype, 2017</h2>
+        <p class="desc">Montana State University School of Architecture students (including Katana) partnered with the Warming Center of Human Resource Development Council (HRDC) to design and build a 150-square-foot tiny home prototype designed to address Bozeman’s growing homelessness crisis. This project serves as the blueprint for &ldquo;Griffin Village,&rdquo; a planned community of 37 tiny houses that aims to provide affordable, dignified housing solutions. By bridging the gap between academic design and hands-on construction, the initiative allowed students to tackle real-world social challenges while providing the community with a functional, research-backed model for sustainable urban living. The initial tiny home was considered a &lsquo;smart home&rsquo; equipped with Home Assistant, among other technology, to detect CO2 levels, energy usage, dew-point, air quality, and much more. After being built, one of the architecture students lived in the home for a few months to test the efficacy of the structure for future iterations. (project 451 Arch)</p>
+        <div class="links2"><details class="credits"><summary class="grey">Credits</summary>
+          <div class="credits-box" role="dialog" aria-label="Project credits">
+            <p>Credits to be added.</p>
+          </div>
+        </details></div>
+      </div>
+    </section>
+    </div>
+
+    <div class="apage">
+    <section class="about project" id="belgrade-library-renovation">
+      <figure class="about-image">
+        <div class="cover-ph" role="img" aria-label="Belgrade Library Renovation: cover photo coming soon"><span>Cover photo coming soon</span></div>
+      </figure>
+      <div class="about-text">
+        <h2 class="exact">Belgrade Library Renovation, 2016</h2>
+        <p class="desc">In 2015, the Belgrade Community Library was named the Best Small Library in America by Library Journal. Katana was one of eight Montana State University architecture students who worked on the Community Design Center (CDC) plans for the Belgrade Community Library expansion. Alongside her classmates, she built the conceptual models and schematic drawings that helped kick off the community&rsquo;s fundraising. That student vision laid the groundwork for the $22 million library and community center now open at 205 E. Main St. The architecture firm 45 Arch carried out the renovation and expansion in 2025.</p>
+        <p class="links"><a class="grey" href="https://www.montana.edu/news/16738/msu-architecture-students-pave-the-way-for-belgrade-library-s-expansion" target="_blank" rel="noopener">MSU News</a><a class="grey" href="https://www.libraryjournal.com/story/the-loaves-and-fishes-library-best-small-library-in-america-2015" target="_blank" rel="noopener">Library Journal I</a><a class="grey" href="https://www.libraryjournal.com/story/small-libraries-big-impact-award-retrospective-2005-2015" target="_blank" rel="noopener">Library Journal II</a></p>
+        <div class="links links2"><a class="grey" href="https://www.45arch.com/educational/belgrade-library-%2B-community-center" target="_blank" rel="noopener">45 Arch Renovation</a>
+        <details class="credits"><summary class="grey">Credits</summary>
+          <div class="credits-box" role="dialog" aria-label="Project credits">
+            <p><b>PROJECT:</b> Belgrade Community Library Expansion</p>
+            <p><b>LOCATION:</b> Belgrade, Montana</p>
+            <p><b>ARCHITECT:</b> 45 Arch</p>
+            <p><b>PROGRAM:</b> Montana State University School of Architecture, Community Design Center (CDC)</p>
+            <p><b>STUDENT DESIGN TEAM:</b> Conceptual Models &amp; Schematic Drawings</p>
+            <ul><li>Katana Calderwood (Katie Calderwood)</li><li>Darren Brown</li><li>Shane Caye</li><li>Chaundra Monical</li><li>Jacob Ryan</li><li>Colin Tippett</li><li>Andrew Wagenblast</li><li>Emilee Williams</li></ul>
+          </div>
+        </details></div>
+      </div>
+    </section>
+    <section class="about project" id="cherry-river-wildlife-observatory">
+      <figure class="about-image">
+        <a href="cherry-river-wildlife-observatory.html" aria-label="Open the Cherry River Wildlife Observatory book"><img src="images/cherry-river-wildlife-observatory-cover-wide.jpg" alt="Cherry River Wildlife Observatory: rendering of the nature center and deck beneath its rippling concrete roof"></a>
+        <a class="book-btn" href="cherry-river-wildlife-observatory.html">Open booklet</a>
+      </figure>
+      <div class="about-text">
+        <h2 class="exact">Cherry River Wildlife Observatory, 2015</h2>
+        <p class="desc">Cherry River Wildlife Observatory is a fly-fishing education and nature center in Bozeman, Montana, shaped by the water around it. Its roof starts out smooth, like the park&rsquo;s still ponds, then ripples and flows like the river. A ramp leads visitors through the building to a cantilevered deck over the water, where fishers can cast straight from the end. A communal fireplace keeps the center in use through the winter.</p>
+        <div class="links2"><details class="credits"><summary class="grey">Credits</summary>
+          <div class="credits-box" role="dialog" aria-label="Project credits">
+            <p><b>ARCHITECTURAL DESIGNERS:</b> Katana Calderwood, Alyssa Parsons, and Kelli Littleton</p>
+          </div>
+        </details></div>
+      </div>
+    </section>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Calderwood Creations LLC</p>
+  </footer>
+
+  <script src="arch.js"></script>
+</body>
+</html>

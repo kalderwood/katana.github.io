@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="view-choice.js"></script>
+  <title>Algo(g)rave: The Manual for Dying — Katana Calderwood</title>
+  <meta name="description" content="Katana Calderwood: experimental artist, designer and builder working in future-primitive, regenerative design.">
+  <meta name="robots" content="index, follow, noai, noimageai">
+  <meta name="author" content="Katana Calderwood">
+  <meta name="copyright" content="© 2026 Calderwood Creations LLC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@300;400&family=Chewy&family=Gochi+Hand&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- hidden SVG filter: messy ink edges for the Algo(g)rave title -->
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+    <filter id="ink" x="-4%" y="-14%" width="108%" height="128%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="8" result="wob"/>
+      <feDisplacementMap in="SourceGraphic" in2="wob" scale="5" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="fine"/>
+      <feDisplacementMap in="d1" in2="fine" scale="2.2" xChannelSelector="G" yChannelSelector="R" result="d2"/>
+      <!-- dry-brush streaks: stretched noise, a few long scratches and gaps -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.42" numOctaves="2" seed="17" result="streak"/>
+      <feColorMatrix in="streak" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 9 -2.8" result="m1"/>
+      <!-- irregular blotches of bare paper, uneven in size -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.075 0.11" numOctaves="4" seed="52" result="blot"/>
+      <feColorMatrix in="blot" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 14 -4.6" result="m2"/>
+      <!-- tiny pin-holes -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.38" numOctaves="2" seed="29" result="pin"/>
+      <feColorMatrix in="pin" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 16 -4.9" result="m3"/>
+      <feComposite in="d2" in2="m1" operator="in" result="a"/>
+      <feComposite in="a" in2="m2" operator="in" result="b"/>
+      <feComposite in="b" in2="m3" operator="in"/>
+    </filter>
+  </defs></svg>
+
+
+  <!-- ===== HEADER (same on every page): edit name and menu here ===== -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Deadbeat Designs"><picture><source srcset="images/brand-linocut.png"><img class="brand-lino brand-imprint" src="images/brand-imprint.png" alt="" width="1500" height="248"></picture></a>
+    <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Menu"><label for="navtoggle" class="nav-burger" aria-hidden="true"><i></i><i></i><i></i></label><label for="navtoggle" class="nav-backdrop" aria-hidden="true"></label>
+    <nav aria-label="Main">
+      <a href="architecture.html" data-text="Architecture">Architecture</a>
+      <a href="art-of-the-taboo.html" aria-current="page" data-text="Exhibitions">Exhibitions</a>
+      <a href="misc.html" data-text="Music">Music</a>
+      <a href="photography.html" data-text="Photography">Photography</a>
+      <a href="texts.html" data-text="Texts">Texts</a>
+      <a href="about.html" data-text="About">About</a>
+      <a href="cv.html" data-text="CV">CV</a>
+      <a href="contact.html" data-text="Contact">Contact</a>
+    </nav>
+  </header>
+
+<main>
+    <h1 class="sr-only">Algo(g)rave: The Manual for Dying</h1>
+    <div class="tetris">
+      <div class="tcol" style="--w:0.303">
+        <figure style="--o:1">
+          <a href="#t01"><img src="images/taboo-01.png" alt="Two figures in painted paper-mâché eye hats inside an upright black coffin, one holding a bird-skull mask, seen through blurred branches" loading="lazy"></a>
+          <figcaption><span class="title">01</span></figcaption>
+        </figure>
+        <figure style="--o:4">
+          <a href="#t04"><img src="images/taboo-04.png" alt="Person in black with a large aged-paper hat painted with an eye, leaning over a black wooden structure" loading="lazy"></a>
+          <figcaption><span class="title">04</span></figcaption>
+        </figure>
+        <figure style="--o:8">
+          <a href="#t08"><img src="images/taboo-08.jpg" alt="Bird-skull mask seen through tamarisk branches beside the black coffin" loading="lazy"></a>
+          <figcaption><span class="title">08</span></figcaption>
+        </figure>
+      </div>
+      <div class="tcol" style="--w:0.321">
+        <figure style="--o:2">
+          <a href="#t02"><img src="images/taboo-02.png" alt="Masked figure in a sheer black veil reaching toward the camera from inside an open black coffin" loading="lazy"></a>
+          <figcaption><span class="title">02</span></figcaption>
+        </figure>
+        <figure style="--o:5">
+          <a href="#t05"><img src="images/taboo-05.png" alt="Close-up of two eye hats and a bird-skull mask inside the coffin, framed by blurred branches" loading="lazy"></a>
+          <figcaption><span class="title">05</span></figcaption>
+        </figure>
+        <figure style="--o:7">
+          <a href="#t07"><img src="images/taboo-07.jpg" alt="Figure holding a bird-skull mask to their face beside a black wooden coffin lid, tamarisk trees above" loading="lazy"></a>
+          <figcaption><span class="title">07</span></figcaption>
+        </figure>
+      </div>
+      <div class="tcol" style="--w:0.376">
+        <figure style="--o:3">
+          <a href="#t03"><img src="images/taboo-03.png" alt="Person in a sheer black veil holding a paper-mâché bird-skull mask in front of a black wooden structure" loading="lazy"></a>
+          <figcaption><span class="title">03</span></figcaption>
+        </figure>
+        <figure style="--o:6">
+          <a href="#t06"><img src="images/taboo-06.png" alt="Two figures in eye hats inside a tilted black coffin, a bird-skull mask in the foreground" loading="lazy"></a>
+          <figcaption><span class="title">06</span></figcaption>
+        </figure>
+        <figure style="--o:9">
+          <a href="#t09"><img src="images/taboo-09.jpg" alt="Film photograph with a light leak: a figure holding a white lily and a bird-skull mask inside the black coffin under tamarisk trees" loading="lazy"></a>
+          <figcaption><span class="title">09</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="back back-bottom"><a href="art-of-the-taboo.html">&larr; Back</a></p>
+  </main>
+
+  <!-- ===== ENLARGED VIEWS (no JavaScript needed) ===== -->
+  <div class="lightbox" id="t01">
+    <a class="lb-close" href="#_" aria-label="Close">&times;</a>
+    <a class="lb-prev" href="#t09" aria-label="Previous">&lsaquo;</a>
+    <figure><img src="images/taboo-01.png" alt="Two figures in painted paper-mâché eye hats inside an upright black coffin, one holding a bird-skull mask, seen through blurred branches"><figcaption>01</figcaption></figure>
+    <a class="lb-next" href="#t02" aria-label="Next">&rsaquo;</a>
+  </div>
+  <div class="lightbox" id="t02">
+    <a class="lb-close" href="#_" aria-label="Close">&times;</a>
+    <a class="lb-prev" href="#t01" aria-label="Previous">&lsaquo;</a>
+    <figure><img src="images/taboo-02.png" alt="Masked figure in a sheer black veil reaching toward the camera from inside an open black coffin"><figcaption>02</figcaption></figure>
+    <a class="lb-next" href="#t03" aria-label="Next">&rsaquo;</a>
+  </div>
+  <div class="lightbox" id="t03">
+    <a class="lb-close" href="#_" aria-label="Close">&times;</a>
+    <a class="lb-prev" href="#t02" aria-label="Previous">&lsaquo;</a>
+    <figure><img src="images/taboo-03.png" alt="Person in a sheer black veil holding a paper-mâché bird-skull mask in front of a black wooden structure"><figcaption>03</figcaption></figure>
+    <a class="lb-next" href="#t04" aria-label="Next">&rsaquo;</a>
+  </div>
+  <div class="lightbox" id="t04">
+    <a class="lb-close" href="#_" aria-label="Close">&times;</a>
+    <a class="lb-prev" href="#t03" aria-label="Previous">&lsaquo;</a>
+    <figure><img src="images/taboo-04.png" alt="Person in black with a large aged-paper hat painted with an eye, leaning over a black wooden structure"><figcaption>04</figcaption></figure>
+    <a class="lb-next" href="#t05" aria-label="Next">&rsaquo;</a>
+  </div>
+  <div class="lightbox" id="t05">
+    <a class="lb-close" href="#_" aria-label="Close">&times;</a>
+    <a class="lb-prev" href="#t04" aria-label="Previous">&lsaquo;</a>
+    <figure><img src="images/taboo-05.png" alt="Close-up of two eye hats and a bird-skull mask inside the coffin, framed by blurred branches"><figcaption>05</figcaption></figure>
+    <a class="lb-next" href="#t06" aria-label="Next">&rsaquo;</a>
+  </div>
+  <div class="lightbox" id="t06">
+    <a class="lb-close" href="#_" aria-label="Close">&times;</a>
+    <a class="lb-prev" href="#t05" aria-label="Previous">&lsaquo;</a>
+    <figure><img src="images/taboo-06.png" alt="Two figures in eye hats inside a tilted black coffin, a bird-skull mask in the foreground"><figcaption>06</figcaption></figure>
+    <a class="lb-next" href="#t07" aria-label="Next">&rsaquo;</a>
+  </div>
+  <div class="lightbox" id="t07">
+    <a class="lb-close" href="#_" aria-label="Close">&times;</a>
+    <a class="lb-prev" href="#t06" aria-label="Previous">&lsaquo;</a>
+    <figure><img src="images/taboo-07.jpg" alt="Figure holding a bird-skull mask to their face beside a black wooden coffin lid, tamarisk trees above"><figcaption>07</figcaption></figure>
+    <a class="lb-next" href="#t08" aria-label="Next">&rsaquo;</a>
+  </div>
+  <div class="lightbox" id="t08">
+    <a class="lb-close" href="#_" aria-label="Close">&times;</a>
+    <a class="lb-prev" href="#t07" aria-label="Previous">&lsaquo;</a>
+    <figure><img src="images/taboo-08.jpg" alt="Bird-skull mask seen through tamarisk branches beside the black coffin"><figcaption>08</figcaption></figure>
+    <a class="lb-next" href="#t09" aria-label="Next">&rsaquo;</a>
+  </div>
+  <div class="lightbox" id="t09">
+    <a class="lb-close" href="#_" aria-label="Close">&times;</a>
+    <a class="lb-prev" href="#t08" aria-label="Previous">&lsaquo;</a>
+    <figure><img src="images/taboo-09.jpg" alt="Film photograph with a light leak: a figure holding a white lily and a bird-skull mask inside the black coffin under tamarisk trees"><figcaption>09</figcaption></figure>
+    <a class="lb-next" href="#t01" aria-label="Next">&rsaquo;</a>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Calderwood Creations LLC</p>
+  </footer>
+
+</body>
+</html>

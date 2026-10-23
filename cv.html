@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="view-choice.js"></script>
+  <title>CV — Calderwood Creations</title>
+  <meta name="description" content="Katana Calderwood: experimental artist, designer and builder working in future-primitive, regenerative design.">
+  <meta name="robots" content="index, follow, noai, noimageai">
+  <meta name="author" content="Katana Calderwood">
+  <meta name="copyright" content="© 2026 Calderwood Creations LLC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@300;400&family=Chewy&family=Gochi+Hand&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Kate Calderwood","alternateName":"Katana Calderwood","jobTitle":"Designer | Artist","description":"Master of Architecture; designer, artist and land-use planner with an emphasis on lunar architecture.","alumniOf":[{"@type":"CollegeOrUniversity","name":"Montana State University"},{"@type":"CollegeOrUniversity","name":"Thammasat University"}],"worksFor":{"@type":"Organization","name":"Calderwood Creations LLC"}}</script>
+</head>
+<body class="fit">
+
+  <!-- hidden SVG filter: messy ink edges for the Algo(g)rave title -->
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+    <filter id="ink" x="-4%" y="-14%" width="108%" height="128%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="8" result="wob"/>
+      <feDisplacementMap in="SourceGraphic" in2="wob" scale="5" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="fine"/>
+      <feDisplacementMap in="d1" in2="fine" scale="2.2" xChannelSelector="G" yChannelSelector="R" result="d2"/>
+      <!-- dry-brush streaks: stretched noise, a few long scratches and gaps -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.42" numOctaves="2" seed="17" result="streak"/>
+      <feColorMatrix in="streak" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 9 -2.8" result="m1"/>
+      <!-- irregular blotches of bare paper, uneven in size -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.075 0.11" numOctaves="4" seed="52" result="blot"/>
+      <feColorMatrix in="blot" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 14 -4.6" result="m2"/>
+      <!-- tiny pin-holes -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.38" numOctaves="2" seed="29" result="pin"/>
+      <feColorMatrix in="pin" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 16 -4.9" result="m3"/>
+      <feComposite in="d2" in2="m1" operator="in" result="a"/>
+      <feComposite in="a" in2="m2" operator="in" result="b"/>
+      <feComposite in="b" in2="m3" operator="in"/>
+    </filter>
+  </defs></svg>
+
+
+  <!-- ===== HEADER (same on every page): edit name and menu here ===== -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Deadbeat Designs"><picture><source srcset="images/brand-linocut.png"><img class="brand-lino brand-imprint" src="images/brand-imprint.png" alt="" width="1500" height="248"></picture></a>
+    <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Menu"><label for="navtoggle" class="nav-burger" aria-hidden="true"><i></i><i></i><i></i></label><label for="navtoggle" class="nav-backdrop" aria-hidden="true"></label>
+    <nav aria-label="Main">
+      <a href="architecture.html" data-text="Architecture">Architecture</a>
+      <a href="art-of-the-taboo.html" data-text="Exhibitions">Exhibitions</a>
+      <a href="misc.html" data-text="Music">Music</a>
+      <a href="photography.html" data-text="Photography">Photography</a>
+      <a href="texts.html" data-text="Texts">Texts</a>
+      <a href="about.html" data-text="About">About</a>
+      <a href="cv.html" aria-current="page" data-text="CV">CV</a>
+      <a href="contact.html" data-text="Contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== ABOUT: edit the text here ===== -->
+  <main class="about project cv-page">
+    <div class="about-text cv-body">
+      <h1 class="sr-only">Kate &ldquo;Katana&rdquo; Calderwood &ndash; Curriculum Vitae</h1>
+      <!-- ===== CV: edit the text here. To add an entry, copy one <li class="cv-job"> block. ===== -->
+      <section class="cv-sec">
+        <h2>Education</h2>
+        <ul class="cv-list">
+          <li class="cv-job"><h3>Master of Architecture</h3><p class="cv-meta">Montana State University, Bozeman, Montana &middot; Fall 2021</p></li>
+          <li class="cv-job"><h3>Bachelor of Environmental Design</h3><p class="cv-meta">Montana State University, Bozeman, Montana &middot; Spring 2017</p></li>
+          <li class="cv-job"><h3>Social Policy &amp; Development (Study Abroad)</h3><p class="cv-meta">Thammasat University, Bangkok, Thailand &middot; Fall 2016</p></li>
+        </ul>
+      </section>
+
+      <section class="cv-sec">
+        <h2>Experience</h2>
+        <ul class="cv-list">
+          <li class="cv-job"><h3>Founder | Designer | Artist</h3><p class="cv-meta">Calderwood Creations LLC | Deadbeat Designs &middot; Contract &middot; November 2023 &ndash; Present</p>
+            <p>Highlighted projects:</p>
+            <ul><li><em>Algo(g)rave: The Manual for Dying</em>, Bombay Beach Biennale X, California, 2026</li><li><em>MACROdose Stage</em> (Do LaB), Coachella Music Festival, 2024</li></ul></li>
+          <li class="cv-job"><h3>Construction &amp; Planning Specialist</h3><p class="cv-meta">Burning Man Project &middot; Full-time &middot; August 2024 &ndash; January 2026</p>
+            <p>Project manager.</p></li>
+          <li class="cv-job"><h3>Planner</h3><p class="cv-meta">Gallatin County, Montana &middot; Full-time &middot; June 2022 &ndash; September 2023 &middot; Bozeman, Montana</p></li>
+          <li class="cv-job"><h3>Split Mountain Metals</h3><p class="cv-meta">Designer | Administration &middot; Full-time &middot; September 2019 &ndash; January 2020 &middot; Belgrade, Montana</p>
+            <p>Full-time position, 40+ hours per week.</p>
+            <ul><li>Led end-of-day meetings with each head of department</li><li>Designed custom metal art, signs and building ornamentation using Rhino</li><li>Operated plasma CNC machines and sandblasted parts when needed</li><li>Client-shop liaison (design-change orders, payment and pickup); worked on projects from the beginning to final stages</li><li>Coordinated with clients, team members and all departments throughout the process</li></ul></li>
+          <li class="cv-job"><h3>School of Architecture, Montana State University</h3><p class="cv-meta">Graduate Teaching Assistant &middot; Part-time &middot; January 2019 &ndash; May 2019 &middot; Bozeman, Montana</p>
+            <p>World History of Architecture II with Andrew Vernooy, FAIA. Part-time position (as needed for grading and attending class).</p>
+            <ul><li>Graded papers, assignments and exams</li><li>Kept detailed records of students&rsquo; grades in Excel</li><li>Met with the professor regularly to discuss successes and failures of the curriculum</li><li>Advised students on how to succeed within the class; attended and instructed class</li></ul></li>
+          <li class="cv-job"><h3>BCHO Architects</h3><p class="cv-meta">Architectural Designer &middot; June 2017 &ndash; May 2018 &middot; Seoul, South Korea</p>
+            <p>Full-time position, 60 to 90 hours per week.</p>
+            <ul><li>Project coordinator for a single-family residential unit (Minimum House): organized contractors (schedules, main tasks, payments) and implemented the architect&rsquo;s and client&rsquo;s instructions</li><li>Architectural designer on the Hyundai Cheonan Global Learning Center team</li><li>Designed construction details and created construction documents solo and as a team member</li><li>Attended and led client and contractor meetings</li></ul></li>
+        </ul>
+      </section>
+
+      <section class="cv-sec">
+        <h2>Public Speaking</h2>
+        <ul class="cv-list">
+        <li>2022 &ndash; Accepted to speak on the <a class="grey" href="https://www.iafastro.org/news/the-global-expert-group-on-sustainable-lunar-activities-gegsla.html" target="_blank" rel="noopener">Global Expert Group on Sustainable Lunar Activities (GEGSLA)</a> panel as Kate Calderwood (Moon Village Association) at the <a class="grey" href="https://isdc2022.nss.org/wp-content/uploads/2022/05/ISDC-2022-Sunday-SCHEDULE-5-26-22.pdf" target="_blank" rel="noopener">40th Annual International Space Development Conference (ISDC)</a>, the annual flagship convention organized by the <a class="grey" href="https://nss.org/" target="_blank" rel="noopener">National Space Society (NSS)</a>. For over four decades, it has served as a premier global hub connecting NASA astronauts, aerospace executives, scientists, architects, and students to discuss space settlement and the NewSpace economy. Accepted as an official session presenter for the Lunar Base Development tracks during the national aerospace design cycles.</li>
+        </ul>
+      </section>
+
+
+      <section class="cv-sec">
+        <h2>Extracurriculars &amp; Volunteering</h2>
+        <ul class="cv-list">
+          <li class="cv-job"><h3>Global Expert Group on Sustainable Lunar Activities (GEGSLA)</h3><p class="cv-meta">Member &middot; January 2021 &ndash; Present</p>
+            <p>The Moon Village Association (MVA) was established as an NGO in 2017 to build relations with &ldquo;those who are, or plan to be active participants in the exploration, development and eventual settlement of the Moon.&rdquo; GEGSLA is a group within the MVA that &ldquo;aims to reduce the risk of involuntary accidents, and foster peaceful global cooperation by defining common level playing field for lunar activities.&rdquo; The outcome from this group will be a working document sent to the United Nations Committee on the Peaceful Use of Outer Space (UNCOPUOS) on Best Practices for Sustainable Lunar Activities in April of 2022.</p></li>
+          <li class="cv-job"><h3>Montana Association of Planners</h3><p class="cv-meta">Member &middot; July 2022 &ndash; July 2023</p></li>
+          <li class="cv-job"><h3>Graduate Student Leadership Council (Founder)</h3><p class="cv-meta">May 2021 &ndash; December 2021 &middot; Montana State University</p>
+            <p>Co-founded with two others through the Graduate Leadership Academy of Montana State University in 2020. The aim was greater representation of graduates in the university political sphere.</p></li>
+          <li class="cv-job"><h3>Bozeman United for Racial Justice (BURJ)</h3><p class="cv-meta">Leader / Member &middot; May 2021 &ndash; May 2022</p>
+            <p>&ldquo;BURJ is a local, BIPOC-led organization trying to mobilize [Bozeman civilians] to push for an equitable community.&rdquo; The group organizes events and rallies to raise awareness and funds for &ldquo;housing, education, mental healthcare, substance abuse treatment, guaranteed income, and all the social services&rdquo; the community deserves.</p></li>
+        </ul>
+      </section>
+
+      <section class="cv-sec">
+        <h2>Honors &amp; Awards</h2>
+        <ul class="cv-list">
+          <li class="cv-job"><h3>Mars College Artist Residency 2027</h3></li>
+          <li class="cv-job"><h3>Mars College Artist Residency 2026</h3></li>
+          <li class="cv-job"><h3>Mars College Artist Residency 2024</h3><p class="cv-meta">Mars College &middot; January 2024</p>
+            <p>Mars College is a three-month educational program, R&amp;D lab, and off-grid residential community dedicated to cultivating a low-cost, high-tech lifestyle for artists of varied backgrounds. Katana taught Rhino3D and modeling.</p></li>
+          <li class="cv-job"><h3>Top 10 Finalist, ProtoMoon Competition</h3><p class="cv-meta">Moon Village Association (MVA) x Yuzhnoye State Design Office &middot; May 2022</p>
+            <p>The MVA and Yuzhnoye State Design Office, Ukraine&rsquo;s top aerospace engineering company, united to &ldquo;select the best technical concepts&rdquo; related to lunar technologies that contribute to a permanent human presence on the Moon. The proposal submitted was titled CERESOMA: Lunar Research Facility, Kate&rsquo;s Master&rsquo;s thesis project.</p></li>
+          <li class="cv-job"><h3>Graduate School Dean&rsquo;s Excellence Scholarship</h3><p class="cv-meta">The Graduate School at Montana State University &middot; May 2021</p></li>
+          <li class="cv-job"><h3>Letter</h3><p class="cv-meta">Bitterroot Swim Team &middot; August 2011</p></li>
+        </ul>
+      </section>
+
+      <section class="cv-sec">
+        <h2>Publications</h2>
+        <ul class="cv-list">
+          <li class="cv-job"><p>Cho, B., H&oslash;gfeldt L. and Hansen G., 2020. <a class="grey" href="texts.html"><em>Mahk</em></a>. Copenhagen: BCHO PARTNERS.</p>
+            <p class="cv-meta">Project collaborator and intern: Hyundai Cheonan Global Learning Center (South Korea); Minimum House (Bozeman, MT)</p></li>
+        </ul>
+      </section>
+
+      <section class="cv-sec">
+        <h2>Licenses &amp; Certifications</h2>
+        <ul class="cv-list">
+          <li class="cv-job"><h3>National Society of Leadership and Success</h3><p class="cv-meta">Montana State University &middot; 2016</p></li>
+          <li class="cv-job"><h3>Black Belt (1st Dan)</h3><p class="cv-meta">Hamilton Tae Kwon-Do &middot; 2011</p></li>
+        </ul>
+      </section>
+
+    </div>
+
+  <div class="cv-left">
+  <section class="reviews cv-reviews" aria-label="What is it like to work with Katana?">
+    <div class="rv-head">
+      <h2 class="rv-title">What is it like to work with Katana?</h2>
+      <span class="rv-arrows"><button type="button" class="rv-prev" aria-label="Scroll reviews left">&lsaquo;</button><button type="button" class="rv-next" aria-label="Scroll reviews right">&rsaquo;</button></span>
+    </div>
+    <div class="rv-track">
+      <article class="rev">
+        <!-- reviewer: Erica William (Nipps) (name hidden for now; restore here) -->
+        <div class="rev-who"><h3 class="rev-name">Senior People Operations Manager at Burning Man Project</h3></div>
+        <p class="rev-text">Kate &ldquo;Katana&rdquo; Calderwood has spent the past year and a half doing work that most of us only glimpse from afar- quietly, steadily, and with diligence. As our real estate specialist, Katana&rsquo;s role required not only technical skill but also grit, patience, and a true never-say-die spirit.</p>
+        <p class="rev-text">Katana joined us on the winding road of real estate development and permitting, helping the team navigate a complex and ever-shifting puzzle of requirements. Drawing on their architectural background, they brought clarity and structure to the early planning stages of our property improvements, helping ideas become plans and plans become something real and possible.</p>
+        <a class="rev-more" href="#rev-1">See more</a>
+      </article>
+      <article class="rev">
+        <!-- reviewer: Steven Raspa (name hidden for now; restore here) -->
+        <div class="rev-who"><h3 class="rev-name">Senior Director of Community Events at Burning Man Project</h3></div>
+        <p class="rev-text full">Katana, Thank you for helping us navigate the challenging work of real estate development, permitting and planning. Wishing you all the best in your future work adventures.</p>
+      </article>
+      <article class="rev">
+        <div class="rev-who"><h3 class="rev-name"><a href="https://www.linkedin.com/in/hannah-mead-298b8a392/" target="_blank" rel="noopener">Hannah Mead</a></h3>
+          <p class="rev-role rev-role-show"><a href="https://www.linkedin.com/in/hannah-mead-298b8a392/" target="_blank" rel="noopener">Founder of This Is the Calling, Therapeutic Art Workshop Collaborator</a></p></div>
+        <p class="rev-text full">Katana and I collaborated on a series of workshops in the north of Spain where we used art and creativity to explore the inner world and facilitated authentic expression from attendees. I thoroughly enjoyed the experience of working together. Katana is a driven, conscientious professional who is able to take ideas, provide structural frameworks for effective delivery and add a magic spark while doing so. She is fully committed to any projects she is involved with and this was evident in her enthusiasm and perseverance in getting things done well and on time! The events were a huge success, so much so we are planning to create a permanent residency and ensure we can keep bringing our skill sets back to our communities.</p>
+      </article>
+      <article class="rev">
+        <!-- reviewer: AuntiChrist (name hidden for now; restore here) -->
+        <div class="rev-who"></div>
+        <p class="rev-text full">Katana! Thanks for sharing all your vibrance, intelligence, and wit. I loved bumping into you on playa, you&rsquo;re always a breath of fresh air. Sending you good vibes, I know your next adventure will be as delightful as you are!</p>
+      </article>
+      <article class="rev">
+        <!-- reviewer: Sweetwater (name hidden for now; restore here) -->
+        <div class="rev-who"></div>
+        <p class="rev-text full">Katana, thank you for being someone I always looked forward to seeing and working with. I wish we could have had more time together, but I know I&rsquo;ll see you around and am down to connect outside of Burning Man. Your spirit and resiliency are a beauty to witness!</p>
+      </article>
+      <article class="rev">
+        <!-- reviewer: Liza Welsh (name hidden for now; restore here) -->
+        <div class="rev-who"><h3 class="rev-name">Former Colleague in a Related Role &middot; Onboarding &amp; Transition Trainer at Burning Man Project</h3></div>
+        <p class="rev-text full">Sl&aacute;n go f&oacute;ill! It was a pleasure meeting and training you. You stepped into a difficult job during an uncertain time and made the best of it. Thank you for your contributions to the sustainable development of our properties! I hope your path brings you back out to playa or that I get to see you again in some other way and place. Le dea-gh&uacute;&iacute; and keep in touch!</p>
+      </article>
+    </div>
+  </section>
+  <div class="cv-extra">
+    <section class="cv-sec">
+      <h2>Expertise</h2>
+      <ul class="cv-grid">
+        <li>Rhinoceros <span>8 yrs</span></li><li>Grasshopper <span>2 yrs</span></li>
+        <li>Adobe Suite <span>7.5 yrs</span></li><li>RhinoCAM <span>5 yrs</span></li>
+        <li>Revit <span>6 yrs</span></li><li>AutoCAD <span>6 yrs</span></li>
+        <li>Lumion <span>5 yrs</span></li><li>VRay <span>2 yrs</span></li>
+        <li>SketchUp <span>8 yrs</span></li><li>Sefaira <span>4 yrs</span></li>
+      </ul>
+    </section>
+
+    <section class="cv-sec">
+      <h2>Skills</h2>
+      <ul class="cv-grid cv-skills">
+        <li>Leadership</li><li>Hand and computer-aided design</li><li>Analytical skills</li><li>Writing &amp; verbal communication</li><li>Administration and team orientation</li><li>Sustainability focus</li><li>Research &amp; conception</li><li>Experimentation &amp; innovation</li><li>Construction documentation</li><li>Strong client-firm relationships</li>
+      </ul>
+    </section>
+  </div>
+  </div>
+  </main>
+
+  <script>
+  /* Review pop-up opens in place: no jump, no scrolling of the CV behind it */
+  (function () {
+    function pop() { return document.getElementById('rev-1'); }
+    document.addEventListener('click', function (e) {
+      var o = e.target.closest && e.target.closest('a.rev-more');
+      var c = e.target.closest && e.target.closest('#rev-1 .hp-close, #rev-1 .hp-bg');
+      if (o) { e.preventDefault(); pop().classList.add('open'); document.documentElement.classList.add('rev-open'); }
+      else if (c) { e.preventDefault(); pop().classList.remove('open'); document.documentElement.classList.remove('rev-open'); }
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { pop().classList.remove('open'); document.documentElement.classList.remove('rev-open'); } });
+    if (location.hash === '#rev-1') { history.replaceState(null, '', location.pathname); }
+  })();
+  </script>
+  <script>
+    (function () {
+      var t = document.querySelector('.rv-track'); if (!t) return;
+      function step(d) { var g = parseFloat(getComputedStyle(t).columnGap) || 0; t.scrollBy({ left: d * (t.clientWidth + g), behavior: 'smooth' }); }
+      document.querySelector('.rv-prev').addEventListener('click', function () { step(-1); });
+      document.querySelector('.rv-next').addEventListener('click', function () { step(1); });
+    })();
+  </script>
+
+  <!-- Review pop-ups: open when a review is clicked, close with the x. -->
+  <div class="handle-pop rev-pop" id="rev-1" role="dialog" aria-label="Review">
+    <a class="hp-bg" href="#_" aria-label="Close"></a>
+    <div class="hp-card">
+      <a class="hp-close" href="#_" aria-label="Close">&times;</a>
+      <!-- reviewer: Erica William (Nipps), name hidden for now -->
+      <p class="hp-label">Senior People Operations Manager at Burning Man Project</p>
+      <p class="hp-text">Kate &ldquo;Katana&rdquo; Calderwood has spent the past year and a half doing work that most of us only glimpse from afar- quietly, steadily, and with diligence. As our real estate specialist, Katana&rsquo;s role required not only technical skill but also grit, patience, and a true never-say-die spirit.</p>
+      <p class="hp-text">Katana joined us on the winding road of real estate development and permitting, helping the team navigate a complex and ever-shifting puzzle of requirements. Drawing on their architectural background, they brought clarity and structure to the early planning stages of our property improvements, helping ideas become plans and plans become something real and possible.</p>
+      <p class="hp-text">During their first season on playa in 2024, Katana took the time to work alongside a wide range of crews, learning how the organization functions across departments and disciplines. That willingness to listen, observe, and understand the broader ecosystem did not go unnoticed. In 2025, Katana stepped up in an even bigger way, serving as one of three NVO Camp Mayors and helping ensure that staff camp functioned as a true home for a growing and evolving department.</p>
+      <p class="hp-text">Katana brings a creative spirit to everything they do, with a deep appreciation for design, music, and the arts, and a curiosity shaped by extensive world travel. We are grateful for the care, thoughtfulness, and resilience they brought to their work with us, often far from the spotlight and in challenging conditions.</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Calderwood Creations LLC</p>
+  </footer>
+
+</body>
+</html>

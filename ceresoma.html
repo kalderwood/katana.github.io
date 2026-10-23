@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="view-choice.js"></script>
+  <title>CERESOMA — Katana Calderwood</title>
+  <meta name="description" content="Katana Calderwood: experimental artist, designer and builder working in future-primitive, regenerative design.">
+  <meta name="robots" content="index, follow, noai, noimageai">
+  <meta name="author" content="Katana Calderwood">
+  <meta name="copyright" content="© 2026 Calderwood Creations LLC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@300;400&family=Chewy&family=Gochi+Hand&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="fit book-page">
+
+  <!-- hidden SVG filter: messy ink edges for the Algo(g)rave title -->
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+    <filter id="ink" x="-4%" y="-14%" width="108%" height="128%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="8" result="wob"/>
+      <feDisplacementMap in="SourceGraphic" in2="wob" scale="5" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="fine"/>
+      <feDisplacementMap in="d1" in2="fine" scale="2.2" xChannelSelector="G" yChannelSelector="R" result="d2"/>
+      <!-- dry-brush streaks: stretched noise, a few long scratches and gaps -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.42" numOctaves="2" seed="17" result="streak"/>
+      <feColorMatrix in="streak" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 9 -2.8" result="m1"/>
+      <!-- irregular blotches of bare paper, uneven in size -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.075 0.11" numOctaves="4" seed="52" result="blot"/>
+      <feColorMatrix in="blot" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 14 -4.6" result="m2"/>
+      <!-- tiny pin-holes -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.38" numOctaves="2" seed="29" result="pin"/>
+      <feColorMatrix in="pin" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 16 -4.9" result="m3"/>
+      <feComposite in="d2" in2="m1" operator="in" result="a"/>
+      <feComposite in="a" in2="m2" operator="in" result="b"/>
+      <feComposite in="b" in2="m3" operator="in"/>
+    </filter>
+  </defs></svg>
+
+
+  <!-- ===== HEADER (same on every page): edit name and menu here ===== -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Deadbeat Designs"><picture><source srcset="images/brand-linocut.png"><img class="brand-lino brand-imprint" src="images/brand-imprint.png" alt="" width="1500" height="248"></picture></a>
+    <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Menu"><label for="navtoggle" class="nav-burger" aria-hidden="true"><i></i><i></i><i></i></label><label for="navtoggle" class="nav-backdrop" aria-hidden="true"></label>
+    <nav aria-label="Main">
+      <a href="architecture.html" aria-current="page" data-text="Architecture">Architecture</a>
+      <a href="art-of-the-taboo.html" data-text="Exhibitions">Exhibitions</a>
+      <a href="misc.html" data-text="Music">Music</a>
+      <a href="photography.html" data-text="Photography">Photography</a>
+      <a href="texts.html" data-text="Texts">Texts</a>
+      <a href="about.html" data-text="About">About</a>
+      <a href="cv.html" data-text="CV">CV</a>
+      <a href="contact.html" data-text="Contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== PROJECT BOOK: pages are listed at the bottom of this section. Turn pages with the arrows,
+       by clicking a page, or by hovering over the book and pressing Space or Return. ===== -->
+  <main class="viewer" style="--r:1" data-spread-start data-start-page="45">
+    <button class="nav prev" type="button" aria-label="Previous page"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg></button>
+    <button class="nav next" type="button" aria-label="Next page"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg></button>
+    <div class="stage"><div class="bookwrap">
+      <div class="book" title="Hover and press Space or Return to turn the page"></div>
+      <div class="bookbar"><a class="book-back" href="architecture.html#ceresoma">&larr; Back</a><span class="book-title">CERESOMA</span></div>
+    </div></div>
+    <ol class="book-pages">
+        <li><img src="images/ceresoma-01.jpg" alt="CERESOMA lunar research facility, page 1"></li>
+        <li><img src="images/ceresoma-02.jpg" alt="CERESOMA lunar research facility, page 2"></li>
+        <li><img src="images/ceresoma-03.jpg" alt="CERESOMA lunar research facility, page 3"></li>
+        <li><img src="images/ceresoma-04.jpg" alt="CERESOMA lunar research facility, page 4"></li>
+        <li><img src="images/ceresoma-05.jpg" alt="CERESOMA lunar research facility, page 5"></li>
+        <li><img src="images/ceresoma-06.jpg" alt="CERESOMA lunar research facility, page 6"></li>
+        <li><img src="images/ceresoma-07.jpg" alt="CERESOMA lunar research facility, page 7"></li>
+        <li><img src="images/ceresoma-08.jpg" alt="CERESOMA lunar research facility, page 8"></li>
+        <li><img src="images/ceresoma-09.jpg" alt="CERESOMA lunar research facility, page 9"></li>
+        <li><img src="images/ceresoma-10.jpg" alt="CERESOMA lunar research facility, page 10"></li>
+        <li><img src="images/ceresoma-11.jpg" alt="CERESOMA lunar research facility, page 11"></li>
+        <li><img src="images/ceresoma-12.jpg" alt="CERESOMA lunar research facility, page 12"></li>
+        <li><img src="images/ceresoma-13.jpg" alt="CERESOMA lunar research facility, page 13"></li>
+        <li><img src="images/ceresoma-14.jpg" alt="CERESOMA lunar research facility, page 14"></li>
+        <li><img src="images/ceresoma-15.jpg" alt="CERESOMA lunar research facility, page 15"></li>
+        <li><img src="images/ceresoma-16.jpg" alt="CERESOMA lunar research facility, page 16"></li>
+        <li><img src="images/ceresoma-17.jpg" alt="CERESOMA lunar research facility, page 17"></li>
+        <li><img src="images/ceresoma-18.jpg" alt="CERESOMA lunar research facility, page 18"></li>
+        <li><img src="images/ceresoma-19.jpg" alt="CERESOMA lunar research facility, page 19"></li>
+        <li><img src="images/ceresoma-20.jpg" alt="CERESOMA lunar research facility, page 20"></li>
+        <li><img src="images/ceresoma-21.jpg" alt="CERESOMA lunar research facility, page 21"></li>
+        <li><img src="images/ceresoma-22.jpg" alt="CERESOMA lunar research facility, page 22"></li>
+        <li><img src="images/ceresoma-23.jpg" alt="CERESOMA lunar research facility, page 23"></li>
+        <li><img src="images/ceresoma-24.jpg" alt="CERESOMA lunar research facility, page 24"></li>
+        <li><img src="images/ceresoma-25.jpg" alt="CERESOMA lunar research facility, page 25"></li>
+        <li><img src="images/ceresoma-26.jpg" alt="CERESOMA lunar research facility, page 26"></li>
+        <li><img src="images/ceresoma-27.jpg" alt="CERESOMA lunar research facility, page 27"></li>
+        <li><img src="images/ceresoma-28.jpg" alt="CERESOMA lunar research facility, page 28"></li>
+        <li><img src="images/ceresoma-29.jpg" alt="CERESOMA lunar research facility, page 29"></li>
+        <li><img src="images/ceresoma-30.jpg" alt="CERESOMA lunar research facility, page 30"></li>
+        <li><img src="images/ceresoma-31.jpg" alt="CERESOMA lunar research facility, page 31"></li>
+        <li><img src="images/ceresoma-32.jpg" alt="CERESOMA lunar research facility, page 32"></li>
+        <li><img src="images/ceresoma-33.jpg" alt="CERESOMA lunar research facility, page 33"></li>
+        <li><img src="images/ceresoma-34.jpg" alt="CERESOMA lunar research facility, page 34"></li>
+        <li><img src="images/ceresoma-35.jpg" alt="CERESOMA lunar research facility, page 35"></li>
+        <li><img src="images/ceresoma-36.jpg" alt="CERESOMA lunar research facility, page 36"></li>
+        <li><img src="images/ceresoma-37.jpg" alt="CERESOMA lunar research facility, page 37"></li>
+        <li><img src="images/ceresoma-38.jpg" alt="CERESOMA lunar research facility, page 38"></li>
+        <li><img src="images/ceresoma-39.jpg" alt="CERESOMA lunar research facility, page 39"></li>
+        <li><img src="images/ceresoma-40.jpg" alt="CERESOMA lunar research facility, page 40"></li>
+        <li><img src="images/ceresoma-41.jpg" alt="CERESOMA lunar research facility, page 41"></li>
+        <li><img src="images/ceresoma-42.jpg" alt="CERESOMA lunar research facility, page 42"></li>
+        <li><img src="images/ceresoma-43.jpg" alt="CERESOMA lunar research facility, page 43"></li>
+        <li><img src="images/ceresoma-44.jpg" alt="CERESOMA lunar research facility, page 44"></li>
+        <li><img src="images/ceresoma-45.jpg" alt="CERESOMA lunar research facility, page 45"></li>
+        <li><img src="images/ceresoma-46.jpg" alt="CERESOMA lunar research facility, page 46"></li>
+        <li><img src="images/ceresoma-47.jpg" alt="CERESOMA lunar research facility, page 47"></li>
+        <li><img src="images/ceresoma-48.jpg" alt="CERESOMA lunar research facility, page 48"></li>
+        <li><img src="images/ceresoma-49.jpg" alt="CERESOMA lunar research facility, page 49"></li>
+        <li><img src="images/ceresoma-50.jpg" alt="CERESOMA lunar research facility, page 50"></li>
+        <li><img src="images/ceresoma-51.jpg" alt="CERESOMA lunar research facility, page 51"></li>
+        <li><img src="images/ceresoma-52.jpg" alt="CERESOMA lunar research facility, page 52"></li>
+        <li><img src="images/ceresoma-53.jpg" alt="CERESOMA lunar research facility, page 53"></li>
+        <li><img src="images/ceresoma-54.jpg" alt="CERESOMA lunar research facility, page 54"></li>
+        <li><img src="images/ceresoma-55.jpg" alt="CERESOMA lunar research facility, page 55"></li>
+        <li><img src="images/ceresoma-56.jpg" alt="CERESOMA lunar research facility, page 56"></li>
+        <li><img src="images/ceresoma-57.jpg" alt="CERESOMA lunar research facility, page 57"></li>
+        <li><img src="images/ceresoma-58.jpg" alt="CERESOMA lunar research facility, page 58"></li>
+        <li><img src="images/ceresoma-59.jpg" alt="CERESOMA lunar research facility, page 59"></li>
+        <li><img src="images/ceresoma-60.jpg" alt="CERESOMA lunar research facility, page 60"></li>
+        <li><img src="images/ceresoma-61.jpg" alt="CERESOMA lunar research facility, page 61"></li>
+        <li><img src="images/ceresoma-62.jpg" alt="CERESOMA lunar research facility, page 62"></li>
+        <li><img src="images/ceresoma-63.jpg" alt="CERESOMA lunar research facility, page 63"></li>
+        <li><img src="images/ceresoma-64.jpg" alt="CERESOMA lunar research facility, page 64"></li>
+        <li><img src="images/ceresoma-65.jpg" alt="CERESOMA lunar research facility, page 65"></li>
+        <li><img src="images/ceresoma-66.jpg" alt="CERESOMA lunar research facility, page 66"></li>
+        <li><img src="images/ceresoma-67.jpg" alt="CERESOMA lunar research facility, page 67"></li>
+        <li><img src="images/ceresoma-68.jpg" alt="CERESOMA lunar research facility, page 68"></li>
+        <li><img src="images/ceresoma-69.jpg" alt="CERESOMA lunar research facility, page 69"></li>
+        <li><img src="images/ceresoma-70.jpg" alt="CERESOMA lunar research facility, page 70"></li>
+        <li><img src="images/ceresoma-71.jpg" alt="CERESOMA lunar research facility, page 71"></li>
+        <li><img src="images/ceresoma-72.jpg" alt="CERESOMA lunar research facility, page 72"></li>
+        <li><img src="images/ceresoma-73.jpg" alt="CERESOMA lunar research facility, page 73"></li>
+        <li><img src="images/ceresoma-74.jpg" alt="CERESOMA lunar research facility, page 74"></li>
+        <li><img src="images/ceresoma-75.jpg" alt="CERESOMA lunar research facility, page 75"></li>
+        <li><img src="images/ceresoma-76.jpg" alt="CERESOMA lunar research facility, page 76"></li>
+        <li><img src="images/ceresoma-77.jpg" alt="CERESOMA lunar research facility, page 77"></li>
+        <li><img src="images/ceresoma-78.jpg" alt="CERESOMA lunar research facility, page 78"></li>
+        <li><img src="images/ceresoma-79.jpg" alt="CERESOMA lunar research facility, page 79"></li>
+        <li><img src="images/ceresoma-80.jpg" alt="CERESOMA lunar research facility, page 80"></li>
+        <li><img src="images/ceresoma-81.jpg" alt="CERESOMA lunar research facility, page 81"></li>
+        <li><img src="images/ceresoma-82.jpg" alt="CERESOMA lunar research facility, page 82"></li>
+        <li><img src="images/ceresoma-83.jpg" alt="CERESOMA lunar research facility, page 83"></li>
+        <li><img src="images/ceresoma-84.jpg" alt="CERESOMA lunar research facility, page 84"></li>
+        <li><img src="images/ceresoma-85.jpg" alt="CERESOMA lunar research facility, page 85"></li>
+        <li><img src="images/ceresoma-86.jpg" alt="CERESOMA lunar research facility, page 86"></li>
+        <li><img src="images/ceresoma-87.jpg" alt="CERESOMA lunar research facility, page 87"></li>
+        <li><img src="images/ceresoma-88.jpg" alt="CERESOMA lunar research facility, page 88"></li>
+        <li><img src="images/ceresoma-89.jpg" alt="CERESOMA lunar research facility, page 89"></li>
+        <li><img src="images/ceresoma-90.jpg" alt="CERESOMA lunar research facility, page 90"></li>
+        <li><img src="images/ceresoma-91.jpg" alt="CERESOMA lunar research facility, page 91"></li>
+        <li><img src="images/ceresoma-92.jpg" alt="CERESOMA lunar research facility, page 92"></li>
+        <li><img src="images/ceresoma-93.jpg" alt="CERESOMA lunar research facility, page 93"></li>
+        <li><img src="images/ceresoma-94.jpg" alt="CERESOMA lunar research facility, page 94"></li>
+        <li><img src="images/ceresoma-95.jpg" alt="CERESOMA lunar research facility, page 95"></li>
+        <li><img src="images/ceresoma-96.jpg" alt="CERESOMA lunar research facility, page 96"></li>
+        <li><img src="images/ceresoma-97.jpg" alt="CERESOMA lunar research facility, page 97"></li>
+        <li><img src="images/ceresoma-98.jpg" alt="CERESOMA lunar research facility, page 98"></li>
+        <li><img src="images/ceresoma-99.jpg" alt="CERESOMA lunar research facility, page 99"></li>
+        <li><img src="images/ceresoma-100.jpg" alt="CERESOMA lunar research facility, page 100"></li>
+        <li><img src="images/ceresoma-101.jpg" alt="CERESOMA lunar research facility, page 101"></li>
+        <li><img src="images/ceresoma-102.jpg" alt="CERESOMA lunar research facility, page 102"></li>
+        <li><img src="images/ceresoma-103.jpg" alt="CERESOMA lunar research facility, page 103"></li>
+        <li><img src="images/ceresoma-104.jpg" alt="CERESOMA lunar research facility, page 104"></li>
+        <li><img src="images/ceresoma-105.jpg" alt="CERESOMA lunar research facility, page 105"></li>
+        <li><img src="images/ceresoma-106.jpg" alt="CERESOMA lunar research facility, page 106"></li>
+        <li><img src="images/ceresoma-107.jpg" alt="CERESOMA lunar research facility, page 107"></li>
+        <li><img src="images/ceresoma-108.jpg" alt="CERESOMA lunar research facility, page 108"></li>
+    </ol>
+  </main>
+
+  <script src="book.js"></script>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Calderwood Creations LLC</p>
+  </footer>
+
+</body>
+</html>

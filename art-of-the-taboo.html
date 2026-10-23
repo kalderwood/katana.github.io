@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="view-choice.js"></script>
+  <title>Exhibitions — Katana Calderwood</title>
+  <meta name="description" content="Katana Calderwood: experimental artist, designer and builder working in future-primitive, regenerative design.">
+  <meta name="robots" content="index, follow, noai, noimageai">
+  <meta name="author" content="Katana Calderwood">
+  <meta name="copyright" content="© 2026 Calderwood Creations LLC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@300;400&family=Chewy&family=Gochi+Hand&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- hidden SVG filter: messy ink edges for the Algo(g)rave title -->
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+    <filter id="ink" x="-4%" y="-14%" width="108%" height="128%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="8" result="wob"/>
+      <feDisplacementMap in="SourceGraphic" in2="wob" scale="5" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="fine"/>
+      <feDisplacementMap in="d1" in2="fine" scale="2.2" xChannelSelector="G" yChannelSelector="R" result="d2"/>
+      <!-- dry-brush streaks: stretched noise, a few long scratches and gaps -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.42" numOctaves="2" seed="17" result="streak"/>
+      <feColorMatrix in="streak" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 9 -2.8" result="m1"/>
+      <!-- irregular blotches of bare paper, uneven in size -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.075 0.11" numOctaves="4" seed="52" result="blot"/>
+      <feColorMatrix in="blot" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 14 -4.6" result="m2"/>
+      <!-- tiny pin-holes -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.38" numOctaves="2" seed="29" result="pin"/>
+      <feColorMatrix in="pin" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 16 -4.9" result="m3"/>
+      <feComposite in="d2" in2="m1" operator="in" result="a"/>
+      <feComposite in="a" in2="m2" operator="in" result="b"/>
+      <feComposite in="b" in2="m3" operator="in"/>
+    </filter>
+  </defs></svg>
+
+
+  <!-- ===== HEADER (same on every page): edit name and menu here ===== -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Deadbeat Designs"><picture><source srcset="images/brand-linocut.png"><img class="brand-lino brand-imprint" src="images/brand-imprint.png" alt="" width="1500" height="248"></picture></a>
+    <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Menu"><label for="navtoggle" class="nav-burger" aria-hidden="true"><i></i><i></i><i></i></label><label for="navtoggle" class="nav-backdrop" aria-hidden="true"></label>
+    <nav aria-label="Main">
+      <a href="architecture.html" data-text="Architecture">Architecture</a>
+      <a href="art-of-the-taboo.html" aria-current="page" data-text="Exhibitions">Exhibitions</a>
+      <a href="misc.html" data-text="Music">Music</a>
+      <a href="photography.html" data-text="Photography">Photography</a>
+      <a href="texts.html" data-text="Texts">Texts</a>
+      <a href="about.html" data-text="About">About</a>
+      <a href="cv.html" data-text="CV">CV</a>
+      <a href="contact.html" data-text="Contact">Contact</a>
+    </nav>
+  </header>
+
+  
+  <main class="about project bw-hover">
+    <figure class="about-image">
+      <a href="algograve.html" aria-label="View Algo(g)rave: The Manual for Dying photos">
+        <img src="images/taboo-cover.png" alt="Grainy vintage-toned photograph of a figure inside an upright coffin, holding a white lily beside a bird-skull mask">
+      </a>
+    </figure>
+
+    <!-- ===== PROJECT TEXT: edit the title and description here ===== -->
+    <div class="about-text">
+      <div class="title-wrap"><h1 class="caps ink-title" aria-label="Algo(g)rave: The Manual for Dying"><span aria-hidden="true"><span class="ln"><span class="w"><span class="c" style="--r:-0.1deg;--y:0.01em;--s:1.03">A</span><span class="c" style="--r:-0.1deg;--y:0.00em;--s:1.00">l</span><span class="c" style="--r:-0.8deg;--y:0.00em;--s:1.01">g</span><span class="c" style="--r:0.7deg;--y:-0.03em;--s:0.98">o</span><span class="c" style="--r:-1.0deg;--y:0.02em;--s:1.02">(</span><span class="c" style="--r:-1.1deg;--y:0.03em;--s:1.04">g</span><span class="c" style="--r:0.4deg;--y:0.01em;--s:0.97">)</span><span class="c" style="--r:-1.2deg;--y:0.00em;--s:0.97">r</span><span class="c" style="--r:-0.8deg;--y:-0.01em;--s:0.97">a</span><span class="c" style="--r:-0.1deg;--y:-0.01em;--s:1.02">v</span><span class="c" style="--r:0.0deg;--y:0.01em;--s:1.00">e</span><span class="c" style="--r:0.4deg;--y:-0.01em;--s:0.98">:</span></span></span> <span class="ln"><span class="w"><span class="c" style="--r:1.2deg;--y:0.03em;--s:1.02">T</span><span class="c" style="--r:0.5deg;--y:-0.01em;--s:0.98">h</span><span class="c" style="--r:-0.5deg;--y:-0.03em;--s:1.02">e</span></span> <span class="w"><span class="c" style="--r:-0.2deg;--y:0.02em;--s:0.99">M</span><span class="c" style="--r:1.1deg;--y:0.02em;--s:0.97">a</span><span class="c" style="--r:-0.7deg;--y:0.03em;--s:1.00">n</span><span class="c" style="--r:1.2deg;--y:-0.01em;--s:0.97">u</span><span class="c" style="--r:0.3deg;--y:0.01em;--s:0.98">a</span><span class="c" style="--r:-1.0deg;--y:-0.01em;--s:1.03">l</span></span> <span class="w"><span class="c" style="--r:0.6deg;--y:-0.03em;--s:0.98">f</span><span class="c" style="--r:-1.0deg;--y:-0.03em;--s:1.02">o</span><span class="c" style="--r:-0.8deg;--y:0.01em;--s:0.99">r</span></span> <span class="w"><span class="c" style="--r:-0.8deg;--y:0.01em;--s:0.97">D</span><span class="c" style="--r:0.3deg;--y:-0.03em;--s:0.99">y</span><span class="c" style="--r:-0.7deg;--y:-0.01em;--s:1.04">i</span><span class="c" style="--r:0.7deg;--y:-0.01em;--s:1.02">n</span><span class="c" style="--r:-0.7deg;--y:-0.01em;--s:1.02">g</span></span></span></span></h1></div>
+      <p class="desc">In March 2026 I received my first artist grant for <em>Algo(g)rave: The Manual for Dying</em>, a project for Bombay Beach Biennale X in California. It consists of one speaker-equipped coffin where participants lie down and move through death via looping soundscapes: white noise resolving into songs, thunderstorms, and poetry about death. Inspired by Buddhist earthly hells, the piece treats death as white noise rather than silence. A ritual offering lets participants hear their own funeral. The project also includes a one-hour and forty minute soundscape created by 15 artists from all over the world. It was mixed and mastered by Katana and aired on the radio station.</p>
+      <!-- Replace the Substack link below with the URL of your Substack post -->
+      <div class="links taboo-links"><a class="grey" href="https://soundcloud.com/katanacalderwood/the-sunyata-cycles" target="_blank" rel="noopener">SoundCloud</a><a class="grey" href="https://kalderwood.substack.com/publish/post/216222435" target="_blank" rel="noopener">Substack Article</a><a class="grey" href="https://bbb-map-app.vercel.app/" target="_blank" rel="noopener">BBB Interactive Map</a><details class="credits"><summary class="grey">Credits</summary><div class="credits-box" role="dialog" aria-label="Project credits">
+          <p><b>Lead Designer &amp; Builder:</b> Katana Calderwood</p>
+          <p><b>Assistant Builders:</b> Mark Calderwood, Carol Calderwood, Alex Calderwood</p>
+          <p><b>Audio Engineer:</b> Alejandro Sanchez-Medina</p>
+          <p><b>Assistant Audio Engineer:</b> Katana Calderwood</p>
+          <p><b>Audio Artists:</b> Bad Cable, Bito, Cameron Gregg, chebel, drmbt, Earl Scioneaux III, Ira Birch, Kamau Zuberi Akabueze [Kza the Alien], Katana Calderwood, Marzipan [Scriptures I Have Loathed], Ria Rajan [Master Fader], The Most Grandiose [EVER], Tristan Rio Music, Wiley Davis, Ygor Marotta, Yulia Vvendenskaya, &psi; [Pseudo]</p>
+          <p><b>Mixed &amp; Mastered:</b> Katana Calderwood</p>
+          <p><b>Photographer:</b> Vincent Naples &amp; Katana Calderwood</p>
+          <p><b>Assistant Photographer:</b> Alejandro Sanchez-Medina</p>
+          <p><b>Mask Designer:</b> Catarina Noronha</p>
+          <p><b>Models:</b> Yulia Vvendenskaya &amp; Katana Calderwood</p>
+          <p><b>Grant Funding:</b> Bombay Beach Institute for Industrial Espionage &amp; Post-Apocalyptic Studies</p>
+        </div></details></div>
+      <a class="gallery-btn" href="algograve.html">Gallery</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Calderwood Creations LLC</p>
+  </footer>
+
+</body>
+</html>
