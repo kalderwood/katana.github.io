@@ -2201,3 +2201,16 @@ body:not(.home) .brand .brand-lino.brand-imprint { opacity: 1 !important; filter
 
 /* LATEST 135: About uses the taped print again (its soft shadow is part of the image, so no extra drop-shadow) */
 .about.solo .about-image img.about-cutout { filter: none !important; }
+
+/* LATEST 136: The Alley Cats page: one transparent album + CD image in the centre */
+.bands-solo { display: block !important; }
+.band-cd { display: flex; justify-content: center; align-items: center; }
+.cd-box { width: min(86vw, 36rem); margin: 0 auto; }
+.pick.cd-pick, .band:nth-child(n) .pick.cd-pick { width: 100%; --a: 0deg; transform: none !important; animation: none !important; background: none !important; overflow: visible; aspect-ratio: auto; border-radius: 0; clip-path: none !important; filter: drop-shadow(0 6px 10px rgba(0,0,0,0.28)); }
+.pick.cd-pick img { position: static !important; display: block; width: 100%; height: auto !important; object-fit: contain; transform: none !important; }
+.pick.cd-pick .snd { transform: none !important; }
+.pick.cd-pick.on { filter: drop-shadow(0 6px 10px rgba(0,0,0,0.28)); }
+.misc:has(.band-cd) { min-height: calc(100dvh - 9rem); display: grid; place-items: center; }
+.misc:has(.band-cd) .misc-grid, .misc:has(.band-cd) .misc-block { width: 100%; }
+.cd-box { width: min(90vw, 44rem); }
+.pick.cd-pick .snd { inset: 0 0 0 34%; }
