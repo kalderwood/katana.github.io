@@ -2214,3 +2214,9 @@ body:not(.home) .brand .brand-lino.brand-imprint { opacity: 1 !important; filter
 .misc:has(.band-cd) .misc-grid, .misc:has(.band-cd) .misc-block { width: 100%; }
 .cd-box { width: min(90vw, 44rem); }
 .pick.cd-pick .snd { inset: 0 0 0 34%; }
+
+/* LATEST 137: nine menu items (Music II added) - tighter menu on tablet widths so nothing is cut off */
+@media (min-width: 44.01rem) and (max-width: 1180px) { .site-header nav { gap: 0.55rem !important; } .site-header nav a { font-size: 0.7rem !important; letter-spacing: 0 !important; } }
+@media (min-width: 44.01rem) and (max-width: 860px) { .site-header nav { gap: 0.3rem !important; } .site-header nav a { font-size: 0.58rem !important; } }
+@media (min-width: 44.01rem) and (max-width: 960px) { body:not(.home) .brand .brand-lino.brand-imprint, .brand .brand-lino { height: 1.5rem !important; width: auto !important; } .site-header nav { gap: 0.4rem !important; } .site-header nav a { font-size: 0.6rem !important; } }
+@media (min-width: 44.01rem) and (max-width: 780px) { .site-header nav { gap: 0.25rem !important; } .site-header nav a { font-size: 0.54rem !important; } .site-header { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } }
