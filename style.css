@@ -2220,3 +2220,9 @@ body:not(.home) .brand .brand-lino.brand-imprint { opacity: 1 !important; filter
 @media (min-width: 44.01rem) and (max-width: 860px) { .site-header nav { gap: 0.3rem !important; } .site-header nav a { font-size: 0.58rem !important; } }
 @media (min-width: 44.01rem) and (max-width: 960px) { body:not(.home) .brand .brand-lino.brand-imprint, .brand .brand-lino { height: 1.5rem !important; width: auto !important; } .site-header nav { gap: 0.4rem !important; } .site-header nav a { font-size: 0.6rem !important; } }
 @media (min-width: 44.01rem) and (max-width: 780px) { .site-header nav { gap: 0.25rem !important; } .site-header nav a { font-size: 0.54rem !important; } .site-header { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } }
+.pick.cd-link { display: block; cursor: pointer; text-decoration: none; transition: transform 0.2s; }
+.pick.cd-link:hover { transform: scale(1.015) !important; }
+.pick.cd-link:focus-visible { outline: 2px solid #000; outline-offset: 6px; }
+
+/* LATEST 138: home page without the hero image for now */
+.home-empty { min-height: calc(100dvh - 9rem); }
