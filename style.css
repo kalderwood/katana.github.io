@@ -2226,3 +2226,14 @@ body:not(.home) .brand .brand-lino.brand-imprint { opacity: 1 !important; filter
 
 /* LATEST 138: home page without the hero image for now */
 .home-empty { min-height: calc(100dvh - 9rem); }
+
+/* LATEST 139: Music II shows two albums (Alley Cats + Bad Cable): side by side on desktop, stacked on phone */
+.bands-solo { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem clamp(1rem, 3vw, 3rem); align-items: center; }
+.bands-solo .cd-box { width: 100% !important; max-width: 40rem; }
+@media (max-width: 44rem) {
+  .bands-solo { grid-template-columns: 1fr !important; gap: 2.2rem !important; }
+  .bands-solo .cd-box { width: min(92vw, 30rem) !important; }
+  .misc:has(.band-cd) { min-height: 0; padding-bottom: 4rem; }
+}
+.misc:has(.band-cd) .misc-grid { max-width: 96rem !important; width: 100%; grid-template-columns: 1fr !important; }
+.misc:has(.band-cd) .misc-block { padding-inline: clamp(1rem, 4vw, 4rem); }
