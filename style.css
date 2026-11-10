@@ -2240,3 +2240,10 @@ body:not(.home) .brand .brand-lino.brand-imprint { opacity: 1 !important; filter
 
 /* LATEST 140: Algo(g)rave gallery: no numbers; light grey photographer note in the enlarged view */
 .lightbox figcaption.photog { color: #a3a3a3; font-weight: 300; font-size: 0.85rem; letter-spacing: 0.04em; justify-content: flex-start; }
+
+/* LATEST 141: Purchase Print page opens first; "Full Size" button leads to the large photo */
+main.about.project.print .about-text > .full-size-btn { display: block; width: fit-content; margin: 1.3rem auto 0.9rem; }
+@media (max-width: 44rem) {
+  main.about.project.print .about-text > .full-size-btn { order: 3; margin: 1.1rem auto 0.2rem; }
+  main.about.project.print .about-text p.back { order: 4; }
+}
