@@ -2237,3 +2237,6 @@ body:not(.home) .brand .brand-lino.brand-imprint { opacity: 1 !important; filter
 }
 .misc:has(.band-cd) .misc-grid { max-width: 96rem !important; width: 100%; grid-template-columns: 1fr !important; }
 .misc:has(.band-cd) .misc-block { padding-inline: clamp(1rem, 4vw, 4rem); }
+
+/* LATEST 140: Algo(g)rave gallery: no numbers; light grey photographer note in the enlarged view */
+.lightbox figcaption.photog { color: #a3a3a3; font-weight: 300; font-size: 0.85rem; letter-spacing: 0.04em; justify-content: flex-start; }
