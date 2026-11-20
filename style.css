@@ -2308,3 +2308,65 @@ main.about.project.print .about-text > .full-size-btn { display: block; width: f
   .projects .apage .about.project .about-text .links2 a, .projects .apage .about.project .about-text .links2 summary, .projects .apage .about.project .about-text p.links a { margin: 0 !important; padding: 0.1rem 0 !important; font-size: 0.68rem !important; }
   .projects .apage .about.project .about-image .book-btn { margin-top: 0.15rem !important; }
 }
+
+/* LATEST 149: phone, Architecture: title hugs the photo, text sits right under it, then Open booklet, then links and credits; each project one page */
+@media (max-width: 44rem) {
+  .projects .apage .about.project, .projects .apage .about.project + .about.project, .projects .about.project:not(:first-child) { justify-content: center !important; gap: 0.3rem !important; }
+  .projects .apage .about.project .about-image > a:first-child { flex: 0 1 auto !important; min-height: 0 !important; }
+  .projects .apage .about.project .cover-ph { flex: 0 1 auto; height: 30dvh; }
+  .projects .apage .about.project .about-text h2 { order: 0; margin: 0 0 0.1rem !important; }
+  .projects .apage .about.project .about-image > a:first-child { order: 1; }
+  .projects .apage .about.project .about-image .cover-ph { order: 1; }
+  .projects .apage .about.project .about-text p.desc { order: 2; margin: 0.2rem 0 0 !important; }
+  .projects .apage .about.project .about-image .book-btn { order: 3 !important; margin: 0.45rem auto 0 !important; }
+  .projects .apage .about.project .about-text p.links, .projects .apage .about.project .about-text .links { order: 4 !important; margin: 0.35rem 0 0 !important; }
+  .projects .apage .about.project .about-text .links2 { order: 5 !important; margin: 0.05rem 0 0 !important; }
+}
+
+/* LATEST 150: phone, Architecture: pictures keep their own size (arch.js trims them only when the page would overflow) */
+@media (max-width: 44rem) {
+  .projects .apage .about.project .about-image > a:first-child { flex: none !important; max-height: none !important; width: auto; }
+  .projects .apage .about.project .about-image > a:first-child img { max-height: none; height: auto; width: auto; max-width: 100%; display: block; margin: 0 auto; }
+  .projects .apage .about.project .cover-ph { flex: none; width: min(100%, 22rem); }
+  .projects .apage .about.project .about-image > a:first-child img { object-fit: contain; }
+}
+
+/* LATEST 151: phone, Architecture: no upward nudge, so each project sits exactly in its own page and the next title never peeks in */
+@media (max-width: 44rem) {
+  html:has(.projects) .projects .about.project { top: 0 !important; }
+}
+
+/* LATEST 152: phone, Architecture: about a quarter inch (24px) between title, picture, text, button, links and credits */
+@media (max-width: 44rem) {
+  .projects .apage .about.project, .projects .apage .about.project + .about.project, .projects .about.project:not(:first-child) { gap: 24px !important; }
+  .projects .apage .about.project .about-text h2, .projects .apage .about.project .about-text p.desc, .projects .apage .about.project .about-image .book-btn,
+  .projects .apage .about.project .about-text p.links, .projects .apage .about.project .about-text .links, .projects .apage .about.project .about-text .links2 { margin-top: 0 !important; margin-bottom: 0 !important; }
+}
+
+/* LATEST 153: phone, Purchase Print pages: tighter spacing so the photo, text, Full Size and Back / Next share one screen (view-choice.js trims the photo only if still needed) */
+@media (max-width: 44rem) {
+  main.about.project.print:not(.texts-page) { height: auto !important; min-height: 0 !important; display: flex !important; flex-direction: column; align-items: center; justify-content: flex-start !important; gap: 12px !important; padding-bottom: 0.5rem !important; }
+  main.about.project.print:not(.texts-page) .about-image { margin: 0 !important; flex: none !important; }
+  main.about.project.print:not(.texts-page) .about-text { margin: 0 !important; display: contents; }
+  main.about.project.print:not(.texts-page) .about-text h1, main.about.project.print:not(.texts-page) .about-text p.desc { margin: 0 !important; }
+  main.about.project.print:not(.texts-page) .about-text .full-size-btn { margin: 0 auto !important; }
+  main.about.project.print:not(.texts-page) .about-text p.back { margin: 0 !important; padding: 0 !important; }
+}
+
+/* LATEST 154: phone, Music: Bad Cable first, Alley Cats second, both centered */
+@media (max-width: 44rem) {
+  .bands.bands-solo { display: flex !important; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
+  .bands.bands-solo #bad-cable { order: 1; }
+  .bands.bands-solo #the-alekats { order: 2; }
+  .bands.bands-solo .band-cd { margin: 0 auto !important; width: 100%; display: flex; justify-content: center; }
+  .bands.bands-solo .cd-box, .bands.bands-solo .cd-pick { margin: 0 auto !important; }
+}
+@media (max-width: 44rem) {
+  .bands.bands-solo { min-height: calc(100dvh - 7.5rem - 4.9rem); align-content: center; }
+}
+
+/* LATEST 155: phone, HRDC: bigger photo (title sits higher, spacing closed up around the photo; text, button and links stay put) */
+@media (max-width: 44rem) {
+  #hrdc-tiny-home-village.about.project { gap: 12px !important; }
+  #hrdc-tiny-home-village .about-text h2 { position: relative; top: -10px; }
+}

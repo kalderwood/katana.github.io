@@ -97,4 +97,25 @@
     }
     window.addEventListener('scroll', on, { passive: true });
   })();
+
+  // phone: Purchase Print pages fit on one screen (photo, text, Full Size, Back / Next) with no scrolling
+  (function () {
+    var mq = window.matchMedia('(max-width: 44rem)');
+    function fit() {
+      var m = document.querySelector('main.about.project.print');
+      var img = m && m.querySelector('.about-image img');
+      if (!img || m.classList.contains('texts-page')) return;
+      img.style.removeProperty('max-height');
+      if (!mq.matches) return;
+      var root = document.documentElement;
+      for (var i = 0; i < 4; i++) {
+        var over = root.scrollHeight - window.innerHeight;
+        if (over <= 0) break;
+        img.style.setProperty('max-height', Math.max(40, Math.floor(img.getBoundingClientRect().height - over - 1)) + 'px', 'important');
+      }
+    }
+    window.addEventListener('load', fit);
+    window.addEventListener('resize', fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  })();
 })();

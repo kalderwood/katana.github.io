@@ -40,3 +40,35 @@
   }
   set(0, false);
 })();
+
+/* Phone: shrink each project's picture just enough that the title, text, button, links and credits all fit on one page. */
+(function () {
+  var mq = window.matchMedia('(max-width: 44rem)');
+  function fit() {
+    var secs = document.querySelectorAll('.projects .about.project');
+    Array.prototype.forEach.call(secs, function (s) {
+      var img = s.querySelector('.about-image img, .cover-ph');
+      if (!img) return;
+      img.style.removeProperty('max-height'); s.style.removeProperty('gap');
+      if (!mq.matches) return;
+      for (var pass = 0; pass < 4; pass++) {
+      var cs = getComputedStyle(s);
+        var kids = Array.prototype.slice.call(s.querySelectorAll('h2, .about-image > a, .about-image > .cover-ph, p.desc, .book-btn, p.links, .links2')).filter(function (e) { return e.offsetParent; });
+        var top = Infinity, bot = -Infinity;
+        kids.forEach(function (k) { var r = k.getBoundingClientRect(), m = getComputedStyle(k); top = Math.min(top, r.top - parseFloat(m.marginTop)); bot = Math.max(bot, r.bottom + parseFloat(m.marginBottom)); });
+        var over = (bot - top) - (s.getBoundingClientRect().height - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom));
+        if (over > 1) img.style.setProperty('max-height', Math.max(0, Math.floor(img.getBoundingClientRect().height - over - 2)) + 'px', 'important');
+        if (over <= 1) break;
+        if (parseFloat(img.style.maxHeight) === 0 || img.getBoundingClientRect().height < 2) {
+          // picture is already gone: close up the spacing a little instead
+          var g = parseFloat(getComputedStyle(s).rowGap) || 0, n = Math.max(1, kids.length - 1);
+          s.style.setProperty('gap', Math.max(6, g - Math.ceil(over / n) - 1) + 'px', 'important');
+        }
+      }
+    });
+  }
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  fit();
+})();
