@@ -2441,3 +2441,28 @@ main.about.project.print .about-text > .full-size-btn { display: block; width: f
 /* LATEST 167: Music order = Half Submerged, Bad Cable, Na Cait Shraide */
 @media (min-width: 44.01rem) { .bands-solo { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; } .bands-solo .cd-box { width: 100% !important; } }
 @media (max-width: 44rem) { .bands.bands-solo #song-seeds-half-submerged { order: 1 !important; } .bands.bands-solo #bad-cable { order: 2 !important; } .bands.bands-solo #the-alekats { order: 3 !important; } }
+
+/* LATEST 168 (mobile only): grey header rule sits 1/4in (24px) under the title words; Music: all CDs on one screen */
+@media (max-width: 44rem) {
+  .site-header { box-shadow: none !important; }
+  .site-header::after { content: ""; position: absolute; left: 0; right: 0; top: 72px; height: 1px; background: #d9d9d9; pointer-events: none; z-index: 1; }
+  .bands.bands-solo { gap: 0.5rem !important; min-height: 0 !important; }
+  .bands.bands-solo .band-cd { margin: 0 auto !important; padding: 0 !important; min-height: 0 !important; }
+  .bands.bands-solo .cd-box { width: min(86vw, calc(((100dvh - 7.5rem - 4.9rem - 2rem) / 3 - 1rem) / 0.651)) !important; margin: 0 auto !important; }
+  .bands.bands-solo .cd-box img { display: block; width: 100% !important; height: auto !important; }
+}
+
+/* LATEST 169 (phone only): the drop-down menu paper is a sharpened, grained, high-resolution sheet so it stays crisp on retina screens */
+@media (max-width: 44rem) {
+  .site-header nav, .site-header nav[aria-label] {
+    background: var(--pl), url("images/paper-menu.webp") center / 100% 100% no-repeat #f1ece4 !important;
+    background-size: 100% 100%, 100% 100% !important;
+    background-position: 0 0, center !important;
+  }
+}
+
+/* LATEST 170 (phone only): Music page never scrolls, the three CDs and the footer sit on one screen */
+@media (max-width: 44rem) {
+  body:has(.bands-solo), main:has(.bands-solo) { padding-bottom: 0 !important; }
+  html:has(.bands-solo), body:has(.bands-solo) { overflow-y: hidden; height: 100dvh; }
+}
