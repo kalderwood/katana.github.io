@@ -2247,3 +2247,57 @@ main.about.project.print .about-text > .full-size-btn { display: block; width: f
   main.about.project.print .about-text > .full-size-btn { order: 3; margin: 1.1rem auto 0.2rem; }
   main.about.project.print .about-text p.back { order: 4; }
 }
+
+/* LATEST 142: phone, Architecture: "Open booklet" button sits under the text and links */
+@media (max-width: 44rem) {
+  .projects .apage .about.project .about-image { display: contents; }
+  .projects .apage .about.project .about-image > a:first-child { order: 1; width: 100%; display: flex; justify-content: center; flex: 0 1 auto; max-height: 36dvh; }
+  .projects .apage .about.project .about-text p.links, .projects .apage .about.project .about-text .links { order: 3; }
+  .projects .apage .about.project .about-text .links2 { order: 4; }
+  .projects .apage .about.project .about-image .book-btn { order: 9; margin: 0.9rem auto 0; flex: none; }
+}
+
+/* LATEST 143: phone, Architecture: every project fits one snap page, with all of its links, credits and button visible; the picture shrinks to leave room for the text */
+@media (max-width: 44rem) {
+  .projects .apage .about.project, .projects .apage .about.project + .about.project, .projects .about.project:not(:first-child) {
+    height: calc(100dvh - var(--header-h) - 4.9rem) !important; min-height: 0 !important; max-height: none !important;
+    overflow: visible !important; display: flex !important; flex-direction: column; justify-content: flex-start; align-items: center;
+    padding: 0.2rem 0.9rem 0 !important; box-sizing: border-box; gap: 0.35rem; }
+  .projects .apage .about.project .about-image > a:first-child { flex: 1 1 0 !important; min-height: 3rem !important; max-height: none !important; width: 100%; display: flex; align-items: center; justify-content: center; }
+  .projects .apage .about.project .about-image > a:first-child img { max-height: 100% !important; max-width: 100%; width: auto; height: auto; object-fit: contain; min-height: 0; }
+  .projects .apage .about.project .about-image .book-btn { margin: 0.3rem auto 0 !important; flex: none; }
+  .projects .apage .about.project .about-text h2 { margin: 0 0 0.2rem !important; font-size: 1.02rem; line-height: 1.2; }
+  .projects .apage .about.project .about-text p.desc { margin: 0.2rem 0 0 !important; font-size: 0.72rem; line-height: 1.42; }
+  .projects .apage .about.project .about-text p.links, .projects .apage .about.project .about-text .links2 { margin: 0.2rem 0 0 !important; }
+  .projects .apage .about.project .about-text > * { flex: none; }
+}
+
+/* LATEST 144: phone, the scroll marker is invisible unless someone is scrolling, and hidden at the top (next to the menu bars) */
+@media (max-width: 44rem) {
+  @supports (animation-timeline: scroll()) {
+    @keyframes sb-move2 { from { transform: translateY(0.5rem); } to { transform: translateY(calc(100dvh - 2.7rem - 0.5rem)); } }
+    html::after { opacity: 0; transition: opacity 0.25s; animation-name: sb-move2 !important; }
+    html.sb-on::after { opacity: 1; }
+  }
+}
+
+/* LATEST 145: phone, Architecture: long texts stay on their page */
+@media (max-width: 44rem) {
+  .projects .apage .about.project .cover-ph { flex: 1 1 0; min-height: 2.5rem; max-height: none; aspect-ratio: auto; width: min(100%, 22rem); }
+  .projects .apage .about.project .about-text p.desc { font-size: 0.68rem; line-height: 1.38; }
+  .projects .apage .about.project .about-text .links a, .projects .apage .about.project .about-text .links2 a, .projects .apage .about.project .about-text summary { font-size: 0.72rem; }
+}
+
+/* LATEST 146: phone, Architecture: text size follows the screen height so the longest project (HRDC) still fits its page */
+@media (max-width: 44rem) {
+  .projects .apage .about.project .about-text p.desc { font-size: calc(5.4px + 0.68dvh) !important; line-height: 1.33; }
+  .projects .apage .about.project .about-text h2 { font-size: calc(10px + 0.9dvh) !important; }
+}
+
+/* LATEST 147: phone, Architecture: on small screens the picture may shrink away so the text, links and button always fit */
+@media (max-width: 44rem) {
+  .projects .apage .about.project .about-image > a:first-child { min-height: 0 !important; }
+  .projects .apage .about.project .cover-ph { min-height: 0; }
+  .projects .apage .about.project { gap: 0.2rem; }
+  .projects .apage .about.project .about-text p.desc { font-size: calc(5px + 0.68dvh) !important; line-height: 1.3; }
+}

@@ -85,4 +85,16 @@
     if (phone && window.matchMedia('(max-width: 44rem)').matches && !saved) popup();
   }
   if (document.body) ready(); else document.addEventListener('DOMContentLoaded', ready);
+
+  // phone: the scroll marker only shows while someone is actually scrolling, and never at the very top
+  (function () {
+    var root = document.documentElement, t;
+    function on() {
+      var y = window.pageYOffset || root.scrollTop || 0;
+      if (y <= 8) { root.classList.remove('sb-on'); clearTimeout(t); return; }
+      root.classList.add('sb-on'); clearTimeout(t);
+      t = setTimeout(function () { root.classList.remove('sb-on'); }, 700);
+    }
+    window.addEventListener('scroll', on, { passive: true });
+  })();
 })();
