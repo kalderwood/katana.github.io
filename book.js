@@ -128,13 +128,13 @@
       else if (k === 'ArrowLeft') { prev(); }
     });
 
-    var x0 = null;
-    root.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    var x0 = null, y0 = 0;
+    root.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
     root.addEventListener('touchend', function (e) {
-      if (x0 === null) return;
-      var dx = e.changedTouches[0].clientX - x0; x0 = null;
-      if (Math.abs(dx) > 40) { if (dx < 0) next(); else prev(); }
-    });
+      if (x0 === null || !e.changedTouches.length) return;
+      var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.2) { if (dx < 0) next(); else prev(); }
+    }, { passive: true });
 
     leaves.forEach(function (leaf, i) { if (i < s) { leaf.classList.add('flipped'); leaf.style.zIndex = i + 1; } }); // already-turned leaves start turned, no animation
     root.classList.add('ready');

@@ -15,3 +15,24 @@
     if (a && a.href) window.location.href = a.href;
   }, { passive: true });
 })();
+
+/* Phones: in an opened photo (Photography, Algo(g)rave) swipe left = next photo, swipe right = previous photo. */
+(function () {
+  if (!document.querySelector('.lightbox')) return;
+  var x0 = 0, y0 = 0, t0 = 0, on = false;
+  function open() { return document.querySelector('.lightbox:target'); }
+  document.addEventListener('touchstart', function (e) {
+    on = e.touches.length === 1 && !!open();
+    if (!on) return;
+    x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; t0 = Date.now();
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    var lb = open();
+    if (!on || !lb || !e.changedTouches.length) return;
+    on = false;
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (Date.now() - t0 > 800 || Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.3) return;
+    var a = lb.querySelector(dx < 0 ? '.lb-next' : '.lb-prev');
+    if (a) window.location.hash = a.getAttribute('href');
+  }, { passive: true });
+})();
