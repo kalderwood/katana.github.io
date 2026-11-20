@@ -2428,3 +2428,16 @@ main.about.project.print .about-text > .full-size-btn { display: block; width: f
 
 /* LATEST 164: a simple light grey line under the Deadbeat Designs title bar (no change to the layout) */
 .site-header { box-shadow: 0 1px 0 #d9d9d9 !important; }
+
+/* LATEST 165: third CD on the Music page (Song Seeds: Unfinished Demos by Katana) */
+@media (min-width: 44.01rem) { .bands-solo { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 1rem clamp(0.5rem, 1.5vw, 1.5rem) !important; } .bands-solo .cd-box { width: 100% !important; } }
+@media (max-width: 44rem) { .bands.bands-solo #song-seeds { order: 3; } }
+
+/* LATEST 166: fourth CD (Song Seeds: Half Submerged): 2 x 2 on desktop, a row of four on very wide screens */
+@media (min-width: 44.01rem) { .bands-solo { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } .bands-solo .cd-box { width: min(100%, 30rem) !important; margin: 0 auto; } }
+@media (min-width: 1500px) { .bands-solo { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } .bands-solo .cd-box { width: 100% !important; } }
+@media (max-width: 44rem) { .bands.bands-solo #song-seeds-half-submerged { order: 4; } }
+
+/* LATEST 167: Music order = Half Submerged, Bad Cable, Na Cait Shraide */
+@media (min-width: 44.01rem) { .bands-solo { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; } .bands-solo .cd-box { width: 100% !important; } }
+@media (max-width: 44rem) { .bands.bands-solo #song-seeds-half-submerged { order: 1 !important; } .bands.bands-solo #bad-cable { order: 2 !important; } .bands.bands-solo #the-alekats { order: 3 !important; } }
