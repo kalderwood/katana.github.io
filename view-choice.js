@@ -82,7 +82,7 @@
   }
   function ready() {
     addSwitch(); addExits();
-    if (phone && window.matchMedia('(max-width: 44rem)').matches && !saved) popup();
+    // (the opening 'Desktop or Mobile version?' page is switched off; phones go straight to the mobile site, and the small Desktop | Mobile switch under the copyright still works)
   }
   if (document.body) ready(); else document.addEventListener('DOMContentLoaded', ready);
 
