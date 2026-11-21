@@ -2475,3 +2475,11 @@ main.about.project.print .about-text > .full-size-btn { display: block; width: f
 .sc-out { display: block; margin-top: .6rem; text-align: center; font-size: .85rem; color: #333; text-decoration: underline; }
 .sc-close { position: absolute; top: .2rem; right: .5rem; border: 0; background: none; font-size: 2rem; line-height: 1; cursor: pointer; color: #222; }
 html.sc-open { overflow: hidden; }
+
+.sc-credit { margin: .5rem 0 0; text-align: center; font-size: .9rem; color: #222; }
+.sc-credit:empty { display: none; }
+
+/* LATEST 172 (desktop only): skills box a bit lower */
+@media (min-width: 44.01rem) {
+  .cv-extra { margin-top: 3.2rem !important; }
+}
