@@ -1152,9 +1152,9 @@ html, body, p, h1, h2, h3, li, a, summary { hyphens: none; -webkit-hyphens: none
 
 /* ===== LATEST 31: MOBILE ONLY (phones, up to 44rem wide). Nothing here applies to the desktop layout. ===== */
 @media (max-width: 44rem) {
-  /* name on phones reads "Deadbeat Designs", stretched to fill the header width; its box height does not grow */
+  /* name on phones reads "Deadbeat Design", stretched to fill the header width; its box height does not grow */
   .site-header .brand > span { display: none; }
-  .site-header .brand::after { content: "Deadbeat Designs"; }
+  .site-header .brand::after { content: "Deadbeat Design"; }
   .site-header .brand { align-self: stretch; transform: none; margin: 0; width: 100%; text-align: center; white-space: nowrap;
     font-size: calc((100vw - 2.5rem) / 7.9); height: 2.16rem; line-height: 2.16rem; overflow: visible; }
   /* menu: left side, indented, 5% smaller; rows are Art/Architecture/Music - Photography/Texts/About - CV/Contact */
@@ -1403,7 +1403,7 @@ img[src="images/hero.jpg"]{clip-path:polygon(0.0% 4.8%,0.9% 4.6%,1.8% 4.8%,2.8% 
 @media (max-width: 44rem) { .site-footer .vc-switch { font-size: 0.63rem; margin: 0.5rem 0 0; } }
 .vc-desktop-view .site-footer .vc-switch { font-size: 2.34rem; }
 
-/* ===== LATEST 39: DESKTOP ONLY - the Deadbeat Designs name is bigger so it fills the header space ===== */
+/* ===== LATEST 39: DESKTOP ONLY - the Deadbeat Design name is bigger so it fills the header space ===== */
 @media (min-width: 44.01rem) { .site-header .brand { zoom: 1.4; } }
 
 /* ===== LATEST 40: DESKTOP ONLY - About text as wide as the photo, About photo back to its plain original view (salmon lines intact); hero image 45% opacity ===== */
@@ -2426,7 +2426,7 @@ main.about.project.print .about-text > .full-size-btn { display: block; width: f
   }
 }
 
-/* LATEST 164: a simple light grey line under the Deadbeat Designs title bar (no change to the layout) */
+/* LATEST 164: a simple light grey line under the Deadbeat Design title bar (no change to the layout) */
 .site-header { box-shadow: 0 1px 0 #d9d9d9 !important; }
 
 /* LATEST 165: third CD on the Music page (Song Seeds: Unfinished Demos by Katana) */
