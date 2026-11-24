@@ -2541,3 +2541,9 @@ html.sc-open { overflow: hidden; }
   main.about.solo { display: flex !important; justify-content: center; }
   main.about.solo .about-text { margin-left: auto !important; margin-right: auto !important; max-width: 36rem; width: 100%; }
 }
+
+/* LATEST 181: About photo is back - undo the text-only centring from LATEST 180 */
+@media (min-width: 44.01rem) {
+  main.about.solo { display: grid !important; justify-content: normal; }
+  main.about.solo .about-text { margin-left: 0 !important; margin-right: 0 !important; max-width: 34rem; width: auto; }
+}
