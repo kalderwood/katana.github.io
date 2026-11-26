@@ -2547,3 +2547,14 @@ html.sc-open { overflow: hidden; }
   main.about.solo { display: grid !important; justify-content: normal; }
   main.about.solo .about-text { margin-left: 0 !important; margin-right: 0 !important; max-width: 34rem; width: auto; }
 }
+
+/* LATEST 182: About CV download link; contact page scrolls so the reviews sit under the form */
+.about-text .cv-dl { margin: 1.6rem 0 0; }
+.about-text .cv-dl a.grey { color: #b4b4b4; font-size: 0.85rem; letter-spacing: 0.04em; border: 0; }
+.about-text .cv-dl a.grey:hover { color: #8a8a8a; }
+body.contact-scroll { height: auto; overflow: visible; display: block; }
+body.contact-scroll .site-footer { display: block; }
+body.contact-scroll main.contact-page { height: auto; padding-bottom: 2rem; }
+@media (min-width: 44.01rem) { body.contact-scroll main.contact-page { min-height: calc(100dvh - var(--header-h)); } }
+.contact-reviews { margin: 1rem auto 0; padding-bottom: 5.5rem; }
+@media (max-width: 44rem) { .contact-reviews { padding-bottom: 3rem; } }

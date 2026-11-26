@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@300;400&family=Chewy&family=Gochi+Hand&family=Anton&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="fit">
+<body class="fit contact-scroll">
 
   <!-- hidden SVG filter: messy ink edges for the Algo(g)rave title -->
   <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
@@ -99,6 +99,37 @@
     </div>
   </main>
 
+  <section class="reviews contact-reviews" aria-label="What is it like to work with Katana?">
+    <div class="rv-head">
+      <h2 class="rv-title">What is it like to work with Katana?</h2>
+      <span class="rv-arrows"><button type="button" class="rv-prev" aria-label="Scroll reviews left">&lsaquo;</button><button type="button" class="rv-next" aria-label="Scroll reviews right">&rsaquo;</button></span>
+    </div>
+    <div class="rv-track">
+      <article class="rev">
+        <!-- reviewer: Erica William (Nipps) (name hidden for now; restore here) -->
+        <div class="rev-who"><h3 class="rev-name">Senior People Operations Manager at Burning Man Project</h3></div>
+        <p class="rev-text">Kate &ldquo;Katana&rdquo; Calderwood has spent the past year and a half doing work that most of us only glimpse from afar- quietly, steadily, and with diligence. As our real estate specialist, Katana&rsquo;s role required not only technical skill but also grit, patience, and a true never-say-die spirit.</p>
+        <p class="rev-text">Katana joined us on the winding road of real estate development and permitting, helping the team navigate a complex and ever-shifting puzzle of requirements. Drawing on their architectural background, they brought clarity and structure to the early planning stages of our property improvements, helping ideas become plans and plans become something real and possible.</p>
+        <a class="rev-more" href="#rev-1">See more</a>
+      </article>
+      <article class="rev">
+        <!-- reviewer: Steven Raspa (name hidden for now; restore here) -->
+        <div class="rev-who"><h3 class="rev-name">Senior Director of Community Events at Burning Man Project</h3></div>
+        <p class="rev-text full">Katana, Thank you for helping us navigate the challenging work of real estate development, permitting and planning. Wishing you all the best in your future work adventures.</p>
+      </article>
+      <article class="rev">
+        <div class="rev-who"><h3 class="rev-name"><a href="https://www.linkedin.com/in/hannah-mead-298b8a392/" target="_blank" rel="noopener">Hannah Mead</a></h3>
+          <p class="rev-role rev-role-show"><a href="https://www.linkedin.com/in/hannah-mead-298b8a392/" target="_blank" rel="noopener">Founder of This Is the Calling, Therapeutic Art Workshop Collaborator</a></p></div>
+        <p class="rev-text full">Katana and I collaborated on a series of workshops in the north of Spain where we used art and creativity to explore the inner world and facilitated authentic expression from attendees. I thoroughly enjoyed the experience of working together. Katana is a driven, conscientious professional who is able to take ideas, provide structural frameworks for effective delivery and add a magic spark while doing so. She is fully committed to any projects she is involved with and this was evident in her enthusiasm and perseverance in getting things done well and on time! The events were a huge success, so much so we are planning to create a permanent residency and ensure we can keep bringing our skill sets back to our communities.</p>
+      </article>
+      <article class="rev">
+        <!-- reviewer: Liza Welsh (name hidden for now; restore here) -->
+        <div class="rev-who"><h3 class="rev-name">Former Colleague in a Related Role &middot; Onboarding &amp; Transition Trainer at Burning Man Project</h3></div>
+        <p class="rev-text full">Sl&aacute;n go f&oacute;ill! It was a pleasure meeting and training you. You stepped into a difficult job during an uncertain time and made the best of it. Thank you for your contributions to the sustainable development of our properties! I hope your path brings you back out to playa or that I get to see you again in some other way and place. Le dea-gh&uacute;&iacute; and keep in touch!</p>
+      </article>
+    </div>
+  </section>
+
 
   <!-- Discord handle pop-up (no website to link to): opens when the Discord icon is clicked, closes with the x -->
   <div class="handle-pop" id="discord" role="dialog" aria-label="Discord handle">
@@ -110,10 +141,45 @@
     </div>
   </div>
 
+  <div class="handle-pop rev-pop" id="rev-1" role="dialog" aria-label="Review">
+    <a class="hp-bg" href="#_" aria-label="Close"></a>
+    <div class="hp-card">
+      <a class="hp-close" href="#_" aria-label="Close">&times;</a>
+      <!-- reviewer: Erica William (Nipps), name hidden for now -->
+      <p class="hp-label">Senior People Operations Manager at Burning Man Project</p>
+      <p class="hp-text">Kate &ldquo;Katana&rdquo; Calderwood has spent the past year and a half doing work that most of us only glimpse from afar- quietly, steadily, and with diligence. As our real estate specialist, Katana&rsquo;s role required not only technical skill but also grit, patience, and a true never-say-die spirit.</p>
+      <p class="hp-text">Katana joined us on the winding road of real estate development and permitting, helping the team navigate a complex and ever-shifting puzzle of requirements. Drawing on their architectural background, they brought clarity and structure to the early planning stages of our property improvements, helping ideas become plans and plans become something real and possible.</p>
+      <p class="hp-text">During their first season on playa in 2024, Katana took the time to work alongside a wide range of crews, learning how the organization functions across departments and disciplines. That willingness to listen, observe, and understand the broader ecosystem did not go unnoticed. In 2025, Katana stepped up in an even bigger way, serving as one of three NVO Camp Mayors and helping ensure that staff camp functioned as a true home for a growing and evolving department.</p>
+      <p class="hp-text">Katana brings a creative spirit to everything they do, with a deep appreciation for design, music, and the arts, and a curiosity shaped by extensive world travel. We are grateful for the care, thoughtfulness, and resilience they brought to their work with us, often far from the spotlight and in challenging conditions.</p>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <p>&copy; 2026 Calderwood Creations LLC</p>
   </footer>
 
   <script src="contact.js"></script>
+  <script>
+  /* Review pop-up opens in place: no jump, no scrolling of the CV behind it */
+  (function () {
+    function pop() { return document.getElementById('rev-1'); }
+    document.addEventListener('click', function (e) {
+      var o = e.target.closest && e.target.closest('a.rev-more');
+      var c = e.target.closest && e.target.closest('#rev-1 .hp-close, #rev-1 .hp-bg');
+      if (o) { e.preventDefault(); pop().classList.add('open'); document.documentElement.classList.add('rev-open'); }
+      else if (c) { e.preventDefault(); pop().classList.remove('open'); document.documentElement.classList.remove('rev-open'); }
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { pop().classList.remove('open'); document.documentElement.classList.remove('rev-open'); } });
+    if (location.hash === '#rev-1') { history.replaceState(null, '', location.pathname); }
+  })();
+  </script>
+  <script>
+    (function () {
+      var t = document.querySelector('.rv-track'); if (!t) return;
+      function step(d) { var g = parseFloat(getComputedStyle(t).columnGap) || 0; t.scrollBy({ left: d * (t.clientWidth + g), behavior: 'smooth' }); }
+      document.querySelector('.rv-prev').addEventListener('click', function () { step(-1); });
+      document.querySelector('.rv-next').addEventListener('click', function () { step(1); });
+    })();
+  </script>
 </body>
 </html>
