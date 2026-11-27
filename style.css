@@ -2570,3 +2570,12 @@ body.contact-scroll main.contact-page { height: auto; padding-bottom: 2rem; }
   main.about.solo .about-text p { font-size: clamp(11px, 1.7vh, 15px); line-height: 1.42; margin: 0 0 0.55em; }
   main.about.solo .about-text .cv-dl { margin: 0.7rem 0 0; }
 }
+
+/* LATEST 185: contact page - reviews sit where the message form was (form saved, commented out in contact.html) */
+main.contact-page .about-text { min-width: 0; max-width: 100%; }
+main.contact-page .about-text .contact-reviews { width: 100%; max-width: 100%; margin: 0; padding: 0; }
+main.contact-page .about-text .contact-reviews .rv-track { max-width: 100%; }
+@media (max-width: 44rem) {
+  .contact-page .about-text { display: block !important; margin: 1.2rem 0 0 !important; }
+  body.contact-scroll main.contact-page { padding-bottom: 3rem; }
+}
