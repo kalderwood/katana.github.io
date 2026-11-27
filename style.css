@@ -2579,3 +2579,13 @@ main.contact-page .about-text .cv-page, main.contact-page .about-text .cv-left {
   main.about.contact-page .about-image { order: 1; }
   body.contact-scroll main.contact-page { padding-bottom: 3rem; }
 }
+
+/* LATEST 186: email + social icons now sit under the About photo (moved from the Contact page) */
+.about.solo .about-image figcaption.about-links { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin: 1rem 0 0; text-align: center; }
+.about.solo .about-links .email { color: var(--ink, #111); font-size: 1rem; }
+.about.solo .about-links .socials { display: flex; gap: 1rem; align-items: center; flex-direction: row; }
+.about.solo .about-links .social { color: var(--ink, #111); opacity: 0.55; line-height: 0; }
+.about.solo .about-links .social:hover { opacity: 0.9; }
+.about.solo .about-links span.social { cursor: default; }
+.about.solo .about-links .photog { color: #a3a3a3; font-weight: 300; font-size: 0.8rem; letter-spacing: 0.04em; margin-top: 0.1rem; }
+@media (min-width: 44.01rem) { .about.solo .about-image img.about-cutout { max-height: calc(100dvh - var(--header-h, 5rem) - 12.4rem); } }
