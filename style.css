@@ -2587,5 +2587,10 @@ main.contact-page .about-text .cv-page, main.contact-page .about-text .cv-left {
 .about.solo .about-links .social { color: var(--ink, #111); opacity: 0.55; line-height: 0; }
 .about.solo .about-links .social:hover { opacity: 0.9; }
 .about.solo .about-links span.social { cursor: default; }
-.about.solo .about-links .photog { color: #a3a3a3; font-weight: 300; font-size: 0.8rem; letter-spacing: 0.04em; margin-top: 0.1rem; }
+.about.solo .about-links .photog { color: #a3a3a3; font-weight: 300; font-size: 0.8rem; letter-spacing: 0.04em; margin: 0 0 0.5rem; }
 @media (min-width: 44.01rem) { .about.solo .about-image img.about-cutout { max-height: calc(100dvh - var(--header-h, 5rem) - 12.4rem); } }
+
+/* LATEST 187: photo credit sits tight under the About photo */
+.about.solo .about-image img.about-cutout { display: block; margin-bottom: 0 !important; }
+.about.solo .about-image figcaption.about-links { margin-top: 0.3rem !important; }
+.about.solo .about-links .photog { margin: 0 0 0.6rem; line-height: 1.2; }
